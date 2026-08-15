@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /compra-concluida
+Disallow: /acessar
+Disallow: /minha-conta
+
+Sitemap: https://alstudiotech.com/sitemap.xml

@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="800" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="100%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+    <filter id="shadowLg" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#0f172a" flood-opacity="0.35" />
+    </filter>
+    <filter id="shadowSm" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="800" height="520" rx="16" fill="url(#bgGrad)" />
+  
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.07" stroke="#ffffff" stroke-width="1">
+    <path d="M0 65 H800 M0 130 H800 M0 195 H800 M0 260 H800 M0 325 H800 M0 390 H800 M0 455 H800" />
+    <path d="M100 0 V520 M200 0 V520 M300 0 V520 M400 0 V520 M500 0 V520 M600 0 V520 M700 0 V520" />
+  </g>
+
+  <!-- Accent Glow -->
+  <circle cx="200" cy="180" r="160" fill="#2563eb" opacity="0.18" filter="blur(60px)" />
+  <circle cx="620" cy="340" r="140" fill="#059669" opacity="0.15" filter="blur(60px)" />
+
+  <!-- Main App Window Mockup -->
+  <g filter="url(#shadowLg)" transform="translate(70, 45)">
+    <!-- Browser/App Frame -->
+    <rect width="660" height="430" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" />
+    
+    <!-- Topbar -->
+    <rect width="660" height="42" rx="12" fill="#0f172a" />
+    <rect y="30" width="660" height="12" fill="#0f172a" />
+    <circle cx="24" cy="21" r="5" fill="#ef4444" />
+    <circle cx="40" cy="21" r="5" fill="#f59e0b" />
+    <circle cx="56" cy="21" r="5" fill="#10b981" />
+    <text x="330" y="26" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" text-anchor="middle">AL Studio Tech • Gerador de Orçamentos</text>
+
+    <!-- App Body Content -->
+    <!-- Left Panel: Form & Customer -->
+    <g transform="translate(24, 62)">
+      <rect width="280" height="344" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadowSm)" />
+      
+      <!-- Panel Header -->
+      <text x="16" y="28" fill="#0f172a" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Dados da Proposta</text>
+      <rect x="16" y="42" width="248" height="30" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="26" y="61" fill="#475569" font-family="-apple-system, sans-serif" font-size="11">Cliente: Mariana Souza • Clínica Vitalle</text>
+      
+      <rect x="16" y="82" width="248" height="30" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="26" y="101" fill="#475569" font-family="-apple-system, sans-serif" font-size="11">Serviço: Consultoria &amp; Otimização</text>
+
+      <text x="16" y="135" fill="#0f172a" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Itens e Serviços</text>
+
+      <!-- Item 1 -->
+      <rect x="16" y="146" width="248" height="42" rx="6" fill="#f1f5f9" />
+      <text x="26" y="164" fill="#1e293b" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">Diagnóstico &amp; Planejamento</text>
+      <text x="26" y="179" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10">Qtd: 1 un • R$ 450,00</text>
+      <text x="250" y="172" fill="#0f172a" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" text-anchor="end">R$ 450,00</text>
+
+      <!-- Item 2 -->
+      <rect x="16" y="196" width="248" height="42" rx="6" fill="#f1f5f9" />
+      <text x="26" y="214" fill="#1e293b" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">Implementação Digital</text>
+      <text x="26" y="229" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10">Qtd: 2 etapas • R$ 600,00</text>
+      <text x="250" y="222" fill="#0f172a" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" text-anchor="end">R$ 1.200,00</text>
+
+      <!-- Action Button inside Left -->
+      <rect x="16" y="280" width="248" height="38" rx="8" fill="#2563eb" />
+      <text x="140" y="304" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle">+ Adicionar Novo Item</text>
+    </g>
+
+    <!-- Right Panel: Live Document Preview -->
+    <g transform="translate(324, 62)">
+      <rect width="312" height="344" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadowSm)" />
+      
+      <!-- Document Header -->
+      <g transform="translate(18, 20)">
+        <rect width="28" height="28" rx="6" fill="#0f172a" />
+        <text x="14" y="18" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="12" font-weight="800" text-anchor="middle">AL</text>
+        <text x="36" y="15" fill="#0f172a" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">PROPOSTA COMERCIAL</text>
+        <text x="36" y="26" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9">Nº 2026-084 • Emissão: 14/08/2026</text>
+      </g>
+
+      <!-- Status Badge -->
+      <rect x="220" y="20" width="74" height="20" rx="10" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1" />
+      <text x="257" y="33" fill="#059669" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" text-anchor="middle">✓ Aprovado</text>
+
+      <line x1="18" y1="58" x2="294" y2="58" stroke="#e2e8f0" stroke-width="1" />
+
+      <!-- Client Info Box -->
+      <rect x="18" y="68" width="276" height="46" rx="6" fill="#f8fafc" />
+      <text x="28" y="85" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">CLIENTE:</text>
+      <text x="28" y="100" fill="#0f172a" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">Mariana Souza (Clínica Vitalle)</text>
+
+      <!-- Total Box -->
+      <rect x="18" y="124" width="276" height="96" rx="8" fill="#0f172a" />
+      <text x="32" y="148" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="10">SUBTOTAL</text>
+      <text x="280" y="148" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10" text-anchor="end">R$ 1.650,00</text>
+      
+      <text x="32" y="168" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="10">DESCONTO À VISTA (5%)</text>
+      <text x="280" y="168" fill="#34d399" font-family="-apple-system, sans-serif" font-size="10" text-anchor="end">- R$ 82,50</text>
+
+      <line x1="32" y1="180" x2="280" y2="180" stroke="#334155" stroke-width="1" />
+
+      <text x="32" y="204" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="11" font-weight="700">VALOR TOTAL:</text>
+      <text x="280" y="206" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="16" font-weight="800" text-anchor="end">R$ 1.567,50</text>
+
+      <!-- WhatsApp Share Button Floating -->
+      <g transform="translate(18, 235)">
+        <rect width="276" height="42" rx="8" fill="#10b981" />
+        <!-- WhatsApp Icon Simple Path -->
+        <circle cx="34" cy="21" r="10" fill="#ffffff" />
+        <path d="M30 21 C30 18.5 32 17 34 17 C36 17 38 18.5 38 21 C38 24 35 25 33 25 L31 25.5 L31.5 23.5 C30.5 22.8 30 22 30 21 Z" fill="#10b981" />
+        <text x="148" y="26" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Enviar Proposta via WhatsApp</text>
+      </g>
+
+      <!-- PDF Download Button -->
+      <g transform="translate(18, 286)">
+        <rect width="276" height="36" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+        <text x="138" y="22" fill="#334155" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">📄 Baixar PDF do Orçamento</text>
+      </g>
+    </g>
+  </g>
+</svg>
