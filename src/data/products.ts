@@ -111,7 +111,7 @@ export const products: Product[] = [
     ],
     version: "v1.0",
     checkoutProvider: "kiwify",
-    checkoutUrl: "",
+    checkoutUrl: "https://pay.kiwify.com.br/jqcVIQV",
     appUrl: "https://orcamentos.alstudiotech.com",
   },
 ];
