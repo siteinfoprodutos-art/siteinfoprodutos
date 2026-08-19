@@ -21,6 +21,17 @@ export interface ProductBenefit {
   description: string;
 }
 
+export interface ProductTutorialStep {
+  step: number;
+  title: string;
+  description?: string;
+}
+
+export interface ProductFAQ {
+  question: string;
+  answer: string;
+}
+
 export interface Product {
   id: string;
   slug: string;
@@ -56,6 +67,14 @@ export interface Product {
   targetAudience?: string;
   highlights?: string[];
   version?: string;
+
+  // Personalização da Página de Vendas e Membros
+  headline?: string;
+  headlineHighlight?: string;
+  ctaText?: string;
+  accessButtonText?: string;
+  tutorialSteps?: ProductTutorialStep[];
+  faqItems?: ProductFAQ[];
 
   // SEO Opcional
   seoTitle?: string;

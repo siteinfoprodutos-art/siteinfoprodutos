@@ -1,12 +1,31 @@
-import { CheckCircle2, MessageCircle, Home } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { CheckCircle2, MessageCircle, Home, Sparkles, ExternalLink, ArrowRight } from 'lucide-react';
 import { brand } from '../config/brand';
 import { SEO } from '../components/SEO';
+import { syncAccessFromUrlParams, getUnlockedProductIds } from '../utils/memberAccess';
+import { products } from '../data/products';
 
 interface PurchaseSuccessPageProps {
   onNavigate: (path: string) => void;
 }
 
 export function PurchaseSuccessPage({ onNavigate }: PurchaseSuccessPageProps) {
+  const [unlockedProduct, setUnlockedProduct] = useState<string | null>(null);
+
+  useEffect(() => {
+    const syncResult = syncAccessFromUrlParams();
+    if (syncResult?.newlyUnlocked) {
+      setUnlockedProduct(syncResult.newlyUnlocked);
+    } else {
+      const all = getUnlockedProductIds();
+      if (all.length > 0) {
+        setUnlockedProduct(all[all.length - 1]);
+      }
+    }
+  }, []);
+
+  const productObj = unlockedProduct ? products.find(p => p.id === unlockedProduct) : null;
+
   return (
     <div className="min-h-[70vh] flex items-center justify-center bg-[var(--color-background)] px-4 py-16 relative transition-colors">
       <SEO title="Compra Concluída" noindex={true} />
@@ -25,18 +44,66 @@ export function PurchaseSuccessPage({ onNavigate }: PurchaseSuccessPageProps) {
               Obrigado por escolher a {brand.name}!
             </h1>
             <p className="text-xs sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium max-w-lg mx-auto">
-              Para acessar o produto adquirido, siga as instruções fornecidas pela Kiwify através do e-mail de confirmação.
+              Seu pagamento foi confirmado com sucesso. O seu acesso foi liberado na área de membros.
             </p>
           </div>
 
-          <div className="pt-2">
+          {productObj && (
+            <div className="p-5 bg-blue-50/70 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 rounded-2xl text-left flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">
+                  <Sparkles className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-blue-600 dark:text-blue-400 block">
+                    Produto Liberado
+                  </span>
+                  <h4 className="text-sm sm:text-base font-black text-slate-900 dark:text-white">
+                    {productObj.name}
+                  </h4>
+                </div>
+              </div>
+
+              {productObj.appUrl ? (
+                <a
+                  href={productObj.appUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-xs rounded-xl transition-all shadow-md shadow-blue-500/20"
+                >
+                  <span>{productObj.accessButtonText || 'ACESSAR FERRAMENTA'}</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => onNavigate('/minha-conta')}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-xs rounded-xl transition-all shadow-md shadow-blue-500/20"
+                >
+                  <span>Ver na Área de Membros</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
+          )}
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+            <button
+              type="button"
+              onClick={() => onNavigate('/minha-conta')}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-950 font-bold text-xs sm:text-sm rounded-xl transition-colors shadow-xs"
+            >
+              <Sparkles className="w-4 h-4" />
+              <span>Ir para a Área de Membros</span>
+            </button>
+
             <button
               type="button"
               onClick={() => onNavigate('/')}
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-950 font-bold text-xs sm:text-sm rounded-xl transition-colors shadow-xs"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-xs sm:text-sm rounded-xl transition-colors"
             >
               <Home className="w-4 h-4" />
-              <span>Voltar para a {brand.name}</span>
+              <span>Página Inicial</span>
             </button>
           </div>
 

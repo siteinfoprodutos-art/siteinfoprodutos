@@ -1,6 +1,7 @@
 import { useState, FormEvent } from 'react';
-import { KeyRound, ArrowRight, ShieldAlert } from 'lucide-react';
+import { KeyRound, ArrowRight } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { setMemberEmail } from '../utils/memberAccess';
 
 interface AccessPageProps {
   onNavigate: (path: string) => void;
@@ -8,17 +9,18 @@ interface AccessPageProps {
 
 export function AccessPage({ onNavigate }: AccessPageProps) {
   const [email, setEmail] = useState('');
-  const [showToast, setShowToast] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 3000);
+    if (email.trim()) {
+      setMemberEmail(email.trim());
+      onNavigate('/minha-conta');
+    }
   };
 
   return (
     <div className="min-h-[70vh] flex items-center justify-center bg-[var(--color-background)] px-4 py-16 relative transition-colors">
-      <SEO title="Acessar" noindex={true} />
+      <SEO title="Acessar Área de Membros" noindex={true} />
       
       <div className="max-w-md w-full relative z-10 space-y-6">
         <div className="text-center space-y-2.5">
@@ -27,7 +29,7 @@ export function AccessPage({ onNavigate }: AccessPageProps) {
           </div>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">Acesse seus produtos</h1>
           <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm font-medium">
-            O acesso aos produtos adquiridos será disponibilizado conforme as instruções recebidas após a compra.
+            Digite o e-mail cadastrado na sua compra para acessar sua área de membros e ferramentas liberadas.
           </p>
         </div>
 
@@ -40,7 +42,8 @@ export function AccessPage({ onNavigate }: AccessPageProps) {
               <input
                 type="email"
                 id="email"
-                placeholder="Seu e-mail de compra..."
+                required
+                placeholder="seu-email@exemplo.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-slate-50 dark:bg-[#0b0f17] border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-colors"
@@ -49,21 +52,12 @@ export function AccessPage({ onNavigate }: AccessPageProps) {
             
             <button 
               type="submit"
-              className="w-full flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-950 px-6 py-3.5 rounded-xl text-xs sm:text-sm font-bold transition-colors shadow-xs"
+              className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3.5 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md shadow-blue-500/20"
             >
-              <span>Continuar</span>
+              <span>Acessar Área de Membros</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </form>
-
-          {showToast && (
-            <div className="mt-4 p-3.5 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 rounded-xl flex items-start gap-3">
-              <ShieldAlert className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
-              <p className="text-xs font-medium text-amber-800 dark:text-amber-300">
-                O acesso direto aos produtos é feito via e-mail enviado após a confirmação do pagamento.
-              </p>
-            </div>
-          )}
         </div>
       </div>
     </div>
