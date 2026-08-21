@@ -15,7 +15,7 @@ export function PurchaseBlock({ product, variant = 'hero' }: PurchaseBlockProps)
 
   const billingText = product.billingType === 'subscription' ? 'Assinatura' : 'Compra única';
 
-  let buttonText = 'Comprar agora';
+  let buttonText = product.ctaText || 'Comprar agora';
   if (isComingSoon || (!isAvailable && product.checkoutUrl === '')) {
     buttonText = 'Em breve';
   } else if (!isAvailable) {

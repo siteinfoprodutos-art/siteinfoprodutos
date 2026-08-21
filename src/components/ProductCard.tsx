@@ -42,15 +42,18 @@ export function ProductCard({ product, onSelect, featured = false }: ProductCard
     >
       <div>
         {/* Visual Preview Header with aspect ratio constraint */}
-        <div className="relative aspect-[16/10] bg-slate-100 dark:bg-[#0d121c] overflow-hidden flex items-center justify-center p-4 border-b border-slate-200/60 dark:border-slate-800/60">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-emerald-500/5 z-0 pointer-events-none" />
+        <div className="relative aspect-[16/10] bg-slate-900 dark:bg-[#0d121c] overflow-hidden flex items-center justify-center border-b border-slate-200/60 dark:border-slate-800/60">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-emerald-500/5 z-0 pointer-events-none" />
 
           {!imgError && product.image ? (
             <img
               src={product.image}
               alt={product.name}
               loading="lazy"
-              className="w-full h-full object-contain relative z-10 transform group-hover:scale-[1.02] transition-transform duration-300"
+              referrerPolicy="no-referrer"
+              className={`w-full h-full relative z-10 transform group-hover:scale-[1.03] transition-transform duration-300 ${
+                product.image.endsWith('.svg') ? 'object-contain p-4' : 'object-cover'
+              }`}
               onError={() => setImgError(true)}
             />
           ) : (

@@ -140,7 +140,7 @@ export const products: Product[] = [
     name: "Gerador de Currículo Profissional",
     category: "app",
     shortDescription:
-      "Crie currículos profissionais de forma rápida, organizada e moderna, prontos para usar na sua busca por emprego.",
+      "Crie currículos profissionais de forma rápida, moderna e organizada.",
     description:
       "O Gerador de Currículo Profissional foi desenvolvido para ajudar você a criar currículos modernos, elegantes e estruturados em poucos minutos. Basta preencher seus dados, experiências profissionais e formação para obter um documento formatado e pronto para destacar suas habilidades no mercado de trabalho.",
     price: 29.9,
@@ -150,14 +150,14 @@ export const products: Product[] = [
     deliveryType: "webapp",
     accessType: "protected",
     badge: "Novo",
-    image: "/assets/gerador-curriculo-preview.svg",
+    image: "/assets/gerador-curriculo-cover.jpg",
     featured: false,
     active: true,
     createdAt: "2026-08-19T00:00:00Z",
     headline: "Currículo profissional pronto em poucos minutos.",
     headlineHighlight: "Crie, personalize e baixe seu currículo moderno diretamente pelo celular ou computador.",
-    ctaText: "QUERO ACESSAR O GERADOR",
-    accessButtonText: "ACESSAR GERADOR",
+    ctaText: "QUERO MEU CURRÍCULO",
+    accessButtonText: "🚀 ACESSAR GERADOR",
     features: [
       {
         title: "Criação de Currículo Profissional",
@@ -227,7 +227,7 @@ export const products: Product[] = [
     ],
     version: "v1.0",
     checkoutProvider: "kiwify",
-    checkoutUrl: "", // [URL DO CHECKOUT KIWIFY DO GERADOR] - Insira a URL do checkout da Kiwify aqui
+    checkoutUrl: "https://pay.kiwify.com.br/66EA8eF",
     appUrl: "https://gerador-curriculo-gamma.vercel.app/",
   },
 ];

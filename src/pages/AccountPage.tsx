@@ -213,9 +213,9 @@ export function AccountPage({ onNavigate }: AccountPageProps) {
                       </div>
 
                       {unlocked ? (
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-[11px] font-extrabold border border-emerald-200 dark:border-emerald-500/20 shrink-0">
+                        <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-[11px] font-extrabold border border-emerald-200 dark:border-emerald-500/20 shrink-0">
                           <CheckCircle2 className="w-3.5 h-3.5" />
-                          <span>Liberado</span>
+                          <span>✓ ACESSO LIBERADO</span>
                         </span>
                       ) : (
                         <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 text-[11px] font-bold border border-slate-200 dark:border-slate-700/60 shrink-0">
@@ -224,6 +224,17 @@ export function AccountPage({ onNavigate }: AccountPageProps) {
                         </span>
                       )}
                     </div>
+
+                    {prod.image && !prod.image.endsWith('.svg') && (
+                      <div className="w-full aspect-[21/9] rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 dark:border-slate-800/80 shadow-xs">
+                        <img
+                          src={prod.image}
+                          alt={prod.name}
+                          referrerPolicy="no-referrer"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
 
                     <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
                       {prod.shortDescription}
@@ -237,9 +248,9 @@ export function AccountPage({ onNavigate }: AccountPageProps) {
                           href={targetUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-extrabold px-5 py-3 rounded-xl text-xs sm:text-sm transition-all shadow-md shadow-blue-500/20"
+                          className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-extrabold px-5 py-3.5 rounded-xl text-xs sm:text-sm transition-all shadow-md shadow-blue-500/20"
                         >
-                          <span>{prod.accessButtonText || (isResume ? 'ACESSAR GERADOR' : 'ACESSAR APLICATIVO')}</span>
+                          <span>{prod.accessButtonText || (isResume ? '🚀 ACESSAR GERADOR' : '🚀 ACESSAR FERRAMENTA')}</span>
                           <ExternalLink className="w-4 h-4" />
                         </a>
 

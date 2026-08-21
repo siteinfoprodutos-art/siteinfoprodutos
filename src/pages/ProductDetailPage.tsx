@@ -269,8 +269,8 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
             </div>
           </div>
 
-          <div className="bg-white dark:bg-[#121824] border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 flex items-center justify-center relative overflow-hidden shadow-xs">
-            <div className="relative z-10 w-full max-w-md mx-auto">
+          <div className="bg-white dark:bg-[#121824] border border-slate-200 dark:border-slate-800 rounded-3xl p-4 sm:p-8 flex items-center justify-center relative overflow-hidden shadow-xs">
+            <div className="relative z-10 w-full max-w-xl mx-auto">
               <ProductMockup compact={false} productId={product.id} />
             </div>
           </div>
