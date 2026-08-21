@@ -25,18 +25,20 @@ export function ProductsPage({ initialCategory, onSelectProduct }: ProductsPageP
 
   const activeProducts = useMemo(() => allProducts.filter(p => p.active), []);
 
-  // Compute available categories based on active products
+  // Available categories to show as filter pills (excluding 'Todos' which is rendered separately)
   const availableCategories = useMemo(() => {
-    const activeCategoryIds = new Set(activeProducts.map(p => p.category));
-    return categories.filter(c => activeCategoryIds.has(c.name));
-  }, [activeProducts]);
+    return categories.filter(c => c.name.toLowerCase() !== 'todos');
+  }, []);
 
   const filteredProducts = useMemo(() => {
     let result = activeProducts.filter((product) => {
       // Category match
+      const selectedCatLower = selectedCategory.toLowerCase();
       const categoryMatch =
         selectedCategory === 'Todos' ||
-        product.category === selectedCategory;
+        selectedCatLower === 'todos' ||
+        product.category.toLowerCase() === selectedCatLower ||
+        (product.categoriesList && product.categoriesList.some(c => c.toLowerCase() === selectedCatLower));
 
       // Search match
       const query = searchQuery.trim().toLowerCase();
@@ -45,7 +47,8 @@ export function ProductsPage({ initialCategory, onSelectProduct }: ProductsPageP
         product.name.toLowerCase().includes(query) ||
         product.shortDescription.toLowerCase().includes(query) ||
         product.description.toLowerCase().includes(query) ||
-        categories.find(c => c.name === product.category)?.label.toLowerCase().includes(query);
+        product.category.toLowerCase().includes(query) ||
+        (product.categoriesList && product.categoriesList.some(c => c.toLowerCase().includes(query)));
 
       return categoryMatch && searchMatch;
     });

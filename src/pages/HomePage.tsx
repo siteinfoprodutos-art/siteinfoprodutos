@@ -1,9 +1,10 @@
-import { ArrowRight, Sparkles, CheckCircle2, Zap, Smartphone, HeartHandshake } from 'lucide-react';
+import { ArrowRight, Sparkles, CheckCircle2, Zap, Smartphone, HeartHandshake, Package } from 'lucide-react';
 import { brand } from '../config/brand';
-import { categories, getFeaturedProduct } from '../data/products';
+import { categories, products, getFeaturedProduct } from '../data/products';
 import { formatPrice } from '../utils/formatters';
 import { SEO } from '../components/SEO';
 import { seoConfig } from '../config/seo';
+import { ProductCard } from '../components/ProductCard';
 
 interface HomePageProps {
   onNavigate: (path: string) => void;
@@ -198,6 +199,42 @@ export function HomePage({ onNavigate, onSelectProduct, onSelectCategory }: Home
             </div>
           </div>
 
+        </div>
+
+        {/* SECTION: Conheça nossos aplicativos */}
+        <div id="home-featured-apps-section" className="mt-12 sm:mt-16 space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200/80 dark:border-slate-800 pb-5">
+            <div className="space-y-1.5">
+              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+                <Package className="w-4 h-4" />
+                <span>Soluções Práticas</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+                Conheça nossos aplicativos
+              </h2>
+              <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm">
+                Ferramentas digitais projetadas para simplificar a gestão, organização e vendas da sua empresa ou carreira.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => onNavigate('/produtos')}
+              className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors whitespace-nowrap"
+            >
+              <span>Ver catálogo completo ({products.filter(p => p.active).length})</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {products.filter(p => p.active).map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                onSelect={onSelectProduct}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

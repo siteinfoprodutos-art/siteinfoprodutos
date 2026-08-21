@@ -1,0 +1,226 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="curriculo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    
+    <linearGradient id="navy-panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <linearGradient id="purple-btn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+
+    <filter id="shadow-soft" x="-5%" y="-5%" width="110%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+
+    <filter id="shadow-card" x="-5%" y="-5%" width="110%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.05"/>
+    </filter>
+  </defs>
+
+  <!-- Canvas Outer Background -->
+  <rect width="1200" height="675" rx="16" fill="url(#curriculo-bg)"/>
+
+  <!-- APP HEADER BAR -->
+  <g transform="translate(0, 0)">
+    <rect width="1200" height="56" fill="#ffffff" />
+    <line x1="0" y1="56" x2="1200" y2="56" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Logo AL StudioTech -->
+    <rect x="24" y="12" width="32" height="32" rx="8" fill="#6366f1"/>
+    <text x="40" y="33" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="14" text-anchor="middle">AL</text>
+    
+    <text x="68" y="27" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="13">AL StudioTech</text>
+    <text x="68" y="41" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="11">Gerador de Currículo</text>
+
+    <!-- Header Right Action -->
+    <text x="1176" y="34" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="12" text-anchor="end">Pular configuração</text>
+  </g>
+
+  <!-- MAIN TWO-COLUMN CONTAINER -->
+  <!-- LEFT COLUMN: WIZARD FORM -->
+  <g transform="translate(48, 80)">
+    <!-- Main Form White Card -->
+    <rect x="0" y="0" width="560" height="550" rx="20" fill="#ffffff" filter="url(#shadow-soft)" border="1" stroke="#e2e8f0"/>
+
+    <!-- Progress Bar Section -->
+    <text x="32" y="36" fill="#6366f1" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="11" letter-spacing="0.5">PASSO 1 DE 5</text>
+    <text x="528" y="36" fill="#6366f1" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="11" text-anchor="end">20%</text>
+
+    <rect x="32" y="46" width="496" height="6" rx="3" fill="#f1f5f9"/>
+    <rect x="32" y="46" width="100" height="6" rx="3" fill="#6366f1"/>
+
+    <!-- Title & Subtitle -->
+    <text x="32" y="80" fill="#6366f1" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="10" letter-spacing="1">PASSO 1 DE 5 • SEU MOMENTO</text>
+    <text x="32" y="112" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="22">O que você está procurando?</text>
+    <text x="32" y="134" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="13">Selecione a opção que melhor descreve seu objetivo atual:</text>
+
+    <!-- 2-COLUMN GRID OF CARDS -->
+    <!-- ROW 1 -->
+    <!-- Card 1: Emprego (Selected) -->
+    <g transform="translate(32, 156)">
+      <rect x="0" y="0" width="238" height="84" rx="14" fill="#f5f3ff" stroke="#6366f1" stroke-width="2"/>
+      <rect x="12" y="20" width="44" height="44" rx="10" fill="#6366f1"/>
+      <!-- Briefcase Icon -->
+      <path d="M26 36H42M28 36V32C28 30.8954 28.8954 30 30 30H38C39.1046 30 40 30.8954 40 32V36M26 36V46C26 47.1046 26.8954 48 28 48H42C43.1046 48 44 47.1046 44 46V36" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      
+      <text x="66" y="38" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="13">Emprego</text>
+      <text x="66" y="54" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="11">Buscar novas...</text>
+
+      <!-- Selected Checkmark Circle -->
+      <circle cx="216" cy="42" r="10" fill="#6366f1"/>
+      <path d="M211 42L214.5 45.5L221 38.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Card 2: Primeiro Emprego -->
+    <g transform="translate(290, 156)">
+      <rect x="0" y="0" width="238" height="84" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow-card)"/>
+      <rect x="12" y="20" width="44" height="44" rx="10" fill="#f1f5f9"/>
+      <!-- Grad Cap Icon -->
+      <path d="M22 36L34 30L46 36L34 42L22 36Z" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M26 38.5V44C26 44 29.5 46.5 34 46.5C38.5 46.5 42 44 42 44V38.5" stroke="#475569" stroke-width="2"/>
+      
+      <text x="66" y="38" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="13">Primeiro emprego</text>
+      <text x="66" y="54" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="11">Entrada no mercado ou...</text>
+
+      <circle cx="216" cy="42" r="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    </g>
+
+    <!-- ROW 2 -->
+    <!-- Card 3: Mudar de carreira -->
+    <g transform="translate(32, 252)">
+      <rect x="0" y="0" width="238" height="84" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow-card)"/>
+      <rect x="12" y="20" width="44" height="44" rx="10" fill="#f1f5f9"/>
+      <!-- Rocket Icon -->
+      <path d="M34 28C34 28 40 30 42 36C40 40 34 44 34 44C34 44 28 40 26 36C28 30 34 28 34 28Z" stroke="#475569" stroke-width="2"/>
+      
+      <text x="66" y="38" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="13">Mudar de carreira</text>
+      <text x="66" y="54" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="11">Transição para uma nova...</text>
+
+      <circle cx="216" cy="42" r="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    </g>
+
+    <!-- Card 4: Trabalho freelancer -->
+    <g transform="translate(290, 252)">
+      <rect x="0" y="0" width="238" height="84" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow-card)"/>
+      <rect x="12" y="20" width="44" height="44" rx="10" fill="#f1f5f9"/>
+      <!-- Laptop Icon -->
+      <path d="M26 31H42V41H26V31Z" stroke="#475569" stroke-width="2"/>
+      <path d="M22 45H46" stroke="#475569" stroke-width="2"/>
+
+      <text x="66" y="38" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="13">Trabalho freelancer</text>
+      <text x="66" y="54" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="11">Prestação de serviços e...</text>
+
+      <circle cx="216" cy="42" r="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    </g>
+
+    <!-- ROW 3 -->
+    <!-- Card 5: Atualizar meu currículo -->
+    <g transform="translate(32, 348)">
+      <rect x="0" y="0" width="238" height="84" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow-card)"/>
+      <rect x="12" y="20" width="44" height="44" rx="10" fill="#f1f5f9"/>
+      <!-- Doc Icon -->
+      <path d="M28 28H36L42 34V46H28V28Z" stroke="#475569" stroke-width="2"/>
+
+      <text x="66" y="38" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="13">Atualizar meu currículo</text>
+      <text x="66" y="54" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="11">Renovar dados e melhora...</text>
+
+      <circle cx="216" cy="42" r="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    </g>
+
+    <!-- Card 6: Outro -->
+    <g transform="translate(290, 348)">
+      <rect x="0" y="0" width="238" height="84" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow-card)"/>
+      <rect x="12" y="20" width="44" height="44" rx="10" fill="#f1f5f9"/>
+      <!-- User Icon -->
+      <circle cx="34" cy="34" r="5" stroke="#475569" stroke-width="2"/>
+      <path d="M26 45C26 41 29 39 34 39C39 39 42 41 42 45" stroke="#475569" stroke-width="2"/>
+
+      <text x="66" y="38" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="13">Outro</text>
+      <text x="66" y="54" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="11">Outro objetivo pessoal o...</text>
+
+      <circle cx="216" cy="42" r="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    </g>
+
+    <!-- Footer link -->
+    <text x="280" y="475" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="12" text-anchor="middle">🔒 Prefiro não informar</text>
+  </g>
+
+  <!-- RIGHT COLUMN: REAL-TIME PREVIEW PANEL -->
+  <g transform="translate(632, 80)">
+    <!-- Dark Navy Frame Container -->
+    <rect x="0" y="0" width="520" height="550" rx="20" fill="url(#navy-panel)" stroke="#1e293b" stroke-width="1.5"/>
+
+    <!-- Header Badge inside panel -->
+    <circle cx="32" cy="32" r="4" fill="#38bdf8"/>
+    <text x="44" y="36" fill="#f8fafc" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="11" letter-spacing="0.5">PRÉVIA EM TEMPO REAL</text>
+
+    <!-- Model Selector Pill -->
+    <rect x="330" y="18" width="162" height="28" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="411" y="36" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="11" text-anchor="middle">Modelo: Modelo 1 — Clássico</text>
+
+    <!-- Toolbar Box -->
+    <rect x="24" y="58" width="472" height="56" rx="12" fill="#ffffff" />
+    <text x="40" y="91" fill="#475569" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="11">VISUALIZAÇÃO A4 <tspan fill="#94a3b8" font-weight="600">(100%)</tspan></text>
+
+    <!-- Zoom & Action buttons -->
+    <rect x="230" y="72" width="28" height="28" rx="6" fill="#f1f5f9"/>
+    <text x="244" y="90" fill="#475569" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="12" text-anchor="middle">-</text>
+
+    <rect x="264" y="72" width="28" height="28" rx="6" fill="#f1f5f9"/>
+    <text x="278" y="90" fill="#475569" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="12" text-anchor="middle">+</text>
+
+    <rect x="302" y="70" width="80" height="32" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+    <text x="342" y="90" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="11" text-anchor="middle">🖨️ IMPRIMIR</text>
+
+    <rect x="390" y="70" width="94" height="32" rx="8" fill="url(#purple-btn)"/>
+    <text x="437" y="90" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="11" text-anchor="middle">📥 BAIXAR PDF</text>
+
+    <!-- A4 RESUME PAPER PREVIEW -->
+    <g transform="translate(60, 130)">
+      <!-- Paper Sheet -->
+      <rect x="0" y="0" width="400" height="395" rx="8" fill="#ffffff" filter="url(#shadow-soft)"/>
+
+      <!-- Document Header -->
+      <text x="200" y="44" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="20" text-anchor="middle" letter-spacing="0.5">SEU NOME COMPLETO</text>
+      <text x="200" y="62" fill="#2563eb" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="12" text-anchor="middle" letter-spacing="1">SEU CARGO DESEJADO</text>
+
+      <!-- Contact Line -->
+      <text x="200" y="80" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="9" text-anchor="middle">
+        (11) 98765-4321  •  seu.email@exemplo.com  •  São Paulo - SP  •  linkedin.com/in/perfil
+      </text>
+
+      <line x1="40" y1="92" x2="360" y2="92" stroke="#0f172a" stroke-width="2"/>
+
+      <!-- Section 1: OBJETIVO PROFISSIONAL -->
+      <text x="40" y="116" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="10" letter-spacing="0.8">OBJETIVO PROFISSIONAL</text>
+      <text x="40" y="132" fill="#334155" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="9">Atuar com foco em crescimento profissional, contribuindo para resultados</text>
+      <text x="40" y="144" fill="#334155" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="9">de excelência na organização.</text>
+
+      <!-- Section 2: RESUMO PROFISSIONAL -->
+      <text x="40" y="174" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="10" letter-spacing="0.8">RESUMO PROFISSIONAL</text>
+      <text x="40" y="190" fill="#334155" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="9">Profissional dedicado e organizado, focado em resultados, melhoria contínua</text>
+      <text x="40" y="202" fill="#334155" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="9">de processos e excelente capacidade de trabalho em equipe.</text>
+
+      <!-- Section 3: EXPERIÊNCIA PROFISSIONAL -->
+      <text x="40" y="232" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="10" letter-spacing="0.8">EXPERIÊNCIA PROFISSIONAL</text>
+      <text x="40" y="248" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="9">Empresa Exemplo | Cargo Pretendido</text>
+      <text x="360" y="248" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="8" text-anchor="end">2021 – Atual</text>
+      <text x="40" y="262" fill="#334155" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="9">• Responsável por liderar projetos e otimizar processos operacionais.</text>
+      <text x="40" y="274" fill="#334155" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="9">• Desenvolvimento de soluções e acompanhamento de métricas de desempenho.</text>
+
+      <!-- Section 4: FORMAÇÃO ACADÊMICA -->
+      <text x="40" y="304" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="10" letter-spacing="0.8">FORMAÇÃO ACADÊMICA</text>
+      <text x="40" y="320" fill="#0f172a" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="9">Graduação / Curso Superior</text>
+      <text x="360" y="320" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="8" text-anchor="end">Concluído</text>
+      <text x="40" y="332" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="8.5">Universidade / Instituição de Ensino</text>
+    </g>
+  </g>
+</svg>

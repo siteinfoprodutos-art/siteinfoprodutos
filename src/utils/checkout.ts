@@ -1,5 +1,8 @@
-export function openCheckout(checkoutUrl: string) {
-  if (!checkoutUrl) return;
+export function openCheckout(checkoutUrl?: string) {
+  if (!checkoutUrl || checkoutUrl === '#' || checkoutUrl.trim() === '') {
+    alert('O link de checkout oficial da Kiwify para este produto estará disponível em breve!');
+    return;
+  }
   
   try {
     const url = new URL(checkoutUrl);
@@ -9,5 +12,6 @@ export function openCheckout(checkoutUrl: string) {
     }
   } catch (error) {
     console.error('Invalid checkout URL', error);
+    alert('O link de checkout oficial da Kiwify para este produto estará disponível em breve!');
   }
 }

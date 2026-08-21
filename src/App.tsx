@@ -57,9 +57,12 @@ export default function App() {
   const renderView = () => {
     const cleanPath = currentPath.split('?')[0];
 
-    // Route: /produto/:slug
-    if (cleanPath.startsWith('/produto/')) {
-      const slug = cleanPath.replace('/produto/', '').replace(/\/$/, '');
+    // Route: /produto/:slug or /apps/:slug
+    if (cleanPath.startsWith('/produto/') || cleanPath.startsWith('/apps/')) {
+      const slug = cleanPath
+        .replace('/produto/', '')
+        .replace('/apps/', '')
+        .replace(/\/$/, '');
       return (
         <ProductDetailPage
           slug={slug}

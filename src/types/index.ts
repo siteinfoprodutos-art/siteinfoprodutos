@@ -1,4 +1,15 @@
-export type ProductCategory = "app" | "automation" | "template" | "kit";
+export type ProductCategory = 
+  | "app" 
+  | "automation" 
+  | "template" 
+  | "kit" 
+  | "Gestão" 
+  | "Orçamentos" 
+  | "Currículo" 
+  | "Agendamento" 
+  | "Produtividade" 
+  | "Outros"
+  | string;
 
 export type DeliveryType = "webapp" | "download" | "external" | "instructions";
 export type AccessType = "public" | "protected" | "download" | "external";
@@ -37,6 +48,7 @@ export interface Product {
   slug: string;
   name: string;
   category: ProductCategory;
+  categoriesList?: string[];
   shortDescription: string;
   description: string;
   price: number;
@@ -84,7 +96,7 @@ export interface Product {
 
 export interface CategoryInfo {
   id: string;
-  name: ProductCategory;
+  name: string;
   label: string;
   title: string;
   description: string;

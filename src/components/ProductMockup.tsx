@@ -7,6 +7,8 @@ interface ProductMockupProps {
 
 export function ProductMockup({ compact = false, productId = 'gerador-orcamentos' }: ProductMockupProps) {
   const isCurriculo = productId === 'gerador-curriculo' || productId === 'gerador-de-curriculo-profissional';
+  const isGestao = productId === 'al-studio-gestao';
+  const isAgenda = productId === 'al-studio-agenda';
 
   if (isCurriculo) {
     return (
@@ -16,15 +18,61 @@ export function ProductMockup({ compact = false, productId = 'gerador-orcamentos
           compact ? 'max-w-md' : 'max-w-2xl mx-auto'
         }`}
       >
-        {/* Background radial glow */}
         <div className="absolute -top-20 -left-20 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Cover Banner Display */}
         <div className="relative rounded-xl bg-[#070b12] border border-slate-700/70 shadow-2xl overflow-hidden group">
           <img
-            src="/assets/gerador-curriculo-cover.jpg"
-            alt="Gerador de Currículo Profissional - Capa Oficial"
+            src="/assets/gerador-curriculo-preview.svg"
+            alt="Gerador de Currículo Profissional - Prévia da Interface"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            className="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-300 rounded-lg"
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if (isGestao) {
+    return (
+      <div
+        id="product-mockup-gestao-wrapper"
+        className={`relative w-full rounded-2xl bg-gradient-to-br from-slate-900 via-[#0b0f17] to-slate-950 p-2 sm:p-3 shadow-2xl border border-slate-700/60 overflow-hidden ${
+          compact ? 'max-w-md' : 'max-w-2xl mx-auto'
+        }`}
+      >
+        <div className="absolute -top-20 -left-20 w-64 h-64 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative rounded-xl bg-[#070b12] border border-slate-700/70 shadow-2xl overflow-hidden group">
+          <img
+            src="/assets/al-studio-gestao-preview.svg"
+            alt="AL Studio Gestão - Interface Vendas & Estoque"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            className="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-300 rounded-lg"
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if (isAgenda) {
+    return (
+      <div
+        id="product-mockup-agenda-wrapper"
+        className={`relative w-full rounded-2xl bg-gradient-to-br from-slate-900 via-[#0b0f17] to-slate-950 p-2 sm:p-3 shadow-2xl border border-slate-700/60 overflow-hidden ${
+          compact ? 'max-w-md' : 'max-w-2xl mx-auto'
+        }`}
+      >
+        <div className="absolute -top-20 -left-20 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative rounded-xl bg-[#070b12] border border-slate-700/70 shadow-2xl overflow-hidden group">
+          <img
+            src="/assets/al-studio-agenda-preview.svg"
+            alt="AL Studio Agenda - Agendamentos & Clientes"
             loading="lazy"
             referrerPolicy="no-referrer"
             className="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-300 rounded-lg"

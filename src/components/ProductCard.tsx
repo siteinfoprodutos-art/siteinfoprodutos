@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { ArrowRight, Sparkles, Check, Layers, Cpu, AppWindow, Wrench } from 'lucide-react';
+import { ArrowRight, Sparkles, Check, Layers, Cpu, AppWindow, Wrench, ShoppingCart } from 'lucide-react';
 import { Product } from '../types';
 import { formatPrice } from '../utils/formatters';
+import { openCheckout } from '../utils/checkout';
 
 interface ProductCardProps {
   key?: string;
@@ -119,8 +120,8 @@ export function ProductCard({ product, onSelect, featured = false }: ProductCard
         </div>
       </div>
 
-      {/* Footer / Price & Button */}
-      <div className="p-5 pt-0 border-t border-slate-100 dark:border-slate-800/80 mt-2 flex items-center justify-between gap-3">
+      {/* Footer / Price & Action Buttons */}
+      <div className="p-5 pt-3 border-t border-slate-100 dark:border-slate-800/80 mt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
           <span className="text-[10px] text-slate-500 dark:text-slate-400 block uppercase font-bold tracking-wider">
             {product.billingType === 'subscription' ? 'Assinatura' : 'Compra única'}
@@ -137,18 +138,33 @@ export function ProductCard({ product, onSelect, featured = false }: ProductCard
           </div>
         </div>
 
-        <button
-          id={`btn-view-${product.id}`}
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            onSelect(product.slug);
-          }}
-          className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-950 text-xs font-bold rounded-xl transition-all shadow-xs"
-        >
-          <span>Conhecer</span>
-          <ArrowRight className="w-3.5 h-3.5" />
-        </button>
+        <div className="flex items-center gap-2 w-full sm:w-auto">
+          <button
+            id={`btn-view-${product.id}`}
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onSelect(product.slug);
+            }}
+            className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-xs font-bold rounded-xl transition-all border border-slate-200 dark:border-slate-700"
+          >
+            <span>Conhecer</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+
+          <button
+            id={`btn-buy-${product.id}`}
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              openCheckout(product.checkoutUrl);
+            }}
+            className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-3.5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold rounded-xl transition-all shadow-xs"
+          >
+            <ShoppingCart className="w-3.5 h-3.5" />
+            <span>Comprar</span>
+          </button>
+        </div>
       </div>
     </div>
   );
