@@ -152,18 +152,34 @@ export function ProductCard({ product, onSelect, featured = false }: ProductCard
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
 
-          <button
-            id={`btn-buy-${product.id}`}
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              openCheckout(product.checkoutUrl);
-            }}
-            className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-3.5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold rounded-xl transition-all shadow-xs"
-          >
-            <ShoppingCart className="w-3.5 h-3.5" />
-            <span>Comprar</span>
-          </button>
+          {product.checkoutUrl ? (
+            <a
+              id={`btn-buy-${product.id}`}
+              href={product.checkoutUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-3.5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold rounded-xl transition-all shadow-xs"
+            >
+              <ShoppingCart className="w-3.5 h-3.5" />
+              <span>Comprar</span>
+            </a>
+          ) : (
+            <button
+              id={`btn-buy-${product.id}`}
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                openCheckout(product.checkoutUrl);
+              }}
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-3.5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold rounded-xl transition-all shadow-xs"
+            >
+              <ShoppingCart className="w-3.5 h-3.5" />
+              <span>Comprar</span>
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -102,16 +102,46 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
     }
   };
 
+  const isGestao = product.id === 'al-studio-gestao' || product.slug.includes('gestao');
+
   // Dynamic content sections
   const heroHeadline = product.headline || (isCurriculo ? "Currículo profissional pronto em poucos minutos." : "Orçamentos profissionais em poucos minutos.");
   const heroHighlight = product.headlineHighlight || product.shortDescription;
 
-  const problemTitle = isCurriculo ? "Pare de formatar currículos do zero." : "Pare de montar orçamentos do zero.";
-  const problemDesc = isCurriculo
+  const problemTitle = isGestao
+    ? "Pare de controlar seu negócio no papel ou em planilhas confusas."
+    : isCurriculo
+    ? "Pare de formatar currículos do zero."
+    : "Pare de montar orçamentos do zero.";
+
+  const problemDesc = isGestao
+    ? "Perder o controle de vendas, não saber se está tendo lucro e ficar sem estoque atrapalha o crescimento da sua empresa. O AL Studio Gestão resolve isso de forma simples e intuitiva."
+    : isCurriculo
     ? "Organizar experiências, cursos e contatos não precisa ser cansativo. O Gerador foi criado para entregar um currículo moderno e estruturado em minutos."
     : "Organizar valores, clientes e serviços não precisa tomar seu tempo. O Gerador foi criado para tornar esse processo simples e prático.";
 
-  const problemCards = isCurriculo
+  const problemCards = isGestao
+    ? [
+        {
+          icon: <Layers className="w-6 h-6" />,
+          color: "blue",
+          title: "Visão 360°",
+          desc: "Acompanhe faturamento, custos e margem de lucro real no mesmo painel de controle.",
+        },
+        {
+          icon: <Zap className="w-6 h-6" />,
+          color: "emerald",
+          title: "Estoque Automático",
+          desc: "Baixa de insumos e produtos a cada venda registrada com alerta de estoque crítico.",
+        },
+        {
+          icon: <ShieldCheck className="w-6 h-6" />,
+          color: "purple",
+          title: "Fichas Técnicas",
+          desc: "Calcule os custos exatos por item e precifique com segurança e margem de lucro garantida.",
+        },
+      ]
+    : isCurriculo
     ? [
         {
           icon: <Layers className="w-6 h-6" />,
@@ -153,8 +183,20 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
         },
       ];
 
-  const stepsTitle = isCurriculo ? "Do preenchimento ao currículo em poucos passos." : "Do orçamento ao cliente em poucos passos.";
-  const steps = isCurriculo
+  const stepsTitle = isGestao
+    ? "Da organização aos resultados em poucos passos."
+    : isCurriculo
+    ? "Do preenchimento ao currículo em poucos passos."
+    : "Do orçamento ao cliente em poucos passos.";
+
+  const steps = isGestao
+    ? [
+        { num: "01", title: "Cadastre seus itens", desc: "Adicione os insumos e produtos do seu estoque com custos." },
+        { num: "02", title: "Monte fichas técnicas", desc: "Vincule ingredientes ou insumos para calcular o custo unitário." },
+        { num: "03", title: "Registre suas vendas", desc: "Lançamento rápido de vendas diárias com baixa automática no estoque." },
+        { num: "04", title: "Acompanhe relatórios", desc: "Visualize seu faturamento, lucro real e produtos mais vendidos." },
+      ]
+    : isCurriculo
     ? [
         { num: "01", title: "Preencha seus dados", desc: "Informe contatos, cargo desejado e resumo profissional." },
         { num: "02", title: "Adicione experiências", desc: "Insira empresas, cargos, períodos e principais conquistas." },
@@ -168,11 +210,17 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
         { num: "04", title: "Compartilhe", desc: "Gere o PDF ou prepare o envio direto pelo WhatsApp." },
       ];
 
-  const ctaFinalTitle = isCurriculo ? (
+  const ctaFinalTitle = isGestao ? (
+    <>Comece agora com o AL Studio Gestão</>
+  ) : isCurriculo ? (
     <>Pronto para destacar <br className="hidden sm:block" /> seu currículo?</>
   ) : (
     <>Pronto para profissionalizar <br className="hidden sm:block" /> seus orçamentos?</>
   );
+
+  const ctaFinalSubtitle = isGestao ? (
+    "Tenha uma ferramenta simples para organizar vendas, estoque, custos, financeiro e resultados do seu negócio."
+  ) : null;
 
   return (
     <div className="pb-24 bg-[var(--color-background)] selection:bg-blue-600 selection:text-white relative transition-colors">
@@ -483,10 +531,15 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
       {/* 13. CTA FINAL */}
       <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto bg-gradient-to-br from-slate-900 to-slate-950 dark:from-[#121824] dark:to-[#0b0f17] border border-slate-800 rounded-3xl p-8 sm:p-14 text-center relative overflow-hidden shadow-xl text-white">
-          <div className="relative z-10 space-y-8">
+          <div className="relative z-10 space-y-6">
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
               {ctaFinalTitle}
             </h2>
+            {ctaFinalSubtitle && (
+              <p className="text-slate-300 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
+                {ctaFinalSubtitle}
+              </p>
+            )}
             <PurchaseBlock product={product} variant="bottom" />
           </div>
         </div>

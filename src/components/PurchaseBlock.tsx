@@ -52,19 +52,26 @@ export function PurchaseBlock({ product, variant = 'hero' }: PurchaseBlockProps)
               )}
             </div>
           </div>
-          <button
-            type="button"
-            onClick={handlePurchase}
-            disabled={isButtonDisabled}
-            className={`inline-flex items-center gap-2 px-5 py-2.5 font-bold text-sm rounded-xl transition-all shadow-sm ${
-              isButtonDisabled
-                ? 'bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-500 cursor-not-allowed'
-                : 'bg-blue-600 hover:bg-blue-700 text-white shadow-blue-500/20'
-            }`}
-          >
-            {isAvailable && product.checkoutUrl !== '' && <ShoppingCart className="w-4 h-4" />}
-            <span>{buttonText}</span>
-          </button>
+          {isButtonDisabled ? (
+            <button
+              type="button"
+              disabled
+              className="inline-flex items-center gap-2 px-5 py-2.5 font-bold text-sm rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-500 cursor-not-allowed"
+            >
+              <span>{buttonText}</span>
+            </button>
+          ) : (
+            <a
+              href={product.checkoutUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent('checkout_click', { productId: product.id, provider: product.checkoutProvider })}
+              className="inline-flex items-center gap-2 px-5 py-2.5 font-bold text-sm rounded-xl transition-all shadow-sm bg-blue-600 hover:bg-blue-700 text-white shadow-blue-500/20"
+            >
+              <ShoppingCart className="w-4 h-4" />
+              <span>{buttonText}</span>
+            </a>
+          )}
         </div>
         {isAvailable && product.checkoutUrl !== '' && product.checkoutProvider === 'kiwify' && (
           <div className="text-[10px] text-slate-500 dark:text-slate-400 font-medium text-center">
@@ -94,19 +101,26 @@ export function PurchaseBlock({ product, variant = 'hero' }: PurchaseBlockProps)
           </div>
         </div>
         <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
-          <button
-            type="button"
-            onClick={handlePurchase}
-            disabled={isButtonDisabled}
-            className={`inline-flex items-center justify-center gap-3 px-10 py-4 font-extrabold text-base sm:text-lg rounded-2xl transition-all w-full sm:w-auto ${
-              isButtonDisabled
-                ? 'bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-500 cursor-not-allowed border border-slate-300 dark:border-slate-700'
-                : 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/20'
-            }`}
-          >
-            {isAvailable && product.checkoutUrl !== '' && <ShoppingCart className="w-5 h-5" />}
-            <span>{buttonText}</span>
-          </button>
+          {isButtonDisabled ? (
+            <button
+              type="button"
+              disabled
+              className="inline-flex items-center justify-center gap-3 px-10 py-4 font-extrabold text-base sm:text-lg rounded-2xl transition-all w-full sm:w-auto bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-500 cursor-not-allowed border border-slate-300 dark:border-slate-700"
+            >
+              <span>{buttonText}</span>
+            </button>
+          ) : (
+            <a
+              href={product.checkoutUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent('checkout_click', { productId: product.id, provider: product.checkoutProvider })}
+              className="inline-flex items-center justify-center gap-3 px-10 py-4 font-extrabold text-base sm:text-lg rounded-2xl transition-all w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/20"
+            >
+              <ShoppingCart className="w-5 h-5" />
+              <span>{buttonText}</span>
+            </a>
+          )}
           {isAvailable && product.checkoutUrl !== '' && product.checkoutProvider === 'kiwify' && (
             <p className="text-xs text-slate-500 dark:text-slate-400 font-medium text-center">
               Pagamento processado com segurança pela Kiwify.
@@ -155,19 +169,26 @@ export function PurchaseBlock({ product, variant = 'hero' }: PurchaseBlockProps)
       </div>
 
       <div className="flex flex-col gap-2 w-full sm:w-auto">
-        <button
-          type="button"
-          onClick={handlePurchase}
-          disabled={isButtonDisabled}
-          className={`inline-flex items-center justify-center gap-2.5 px-8 py-3.5 font-extrabold text-sm sm:text-base rounded-xl transition-all w-full sm:w-auto ${
-            isButtonDisabled
-              ? 'bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-500 cursor-not-allowed border border-slate-300 dark:border-slate-700'
-              : 'bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-500/20 hover:shadow-lg'
-          }`}
-        >
-          {isAvailable && product.checkoutUrl !== '' && <ShoppingCart className="w-5 h-5" />}
-          <span>{buttonText}</span>
-        </button>
+        {isButtonDisabled ? (
+          <button
+            type="button"
+            disabled
+            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 font-extrabold text-sm sm:text-base rounded-xl transition-all w-full sm:w-auto bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-500 cursor-not-allowed border border-slate-300 dark:border-slate-700"
+          >
+            <span>{buttonText}</span>
+          </button>
+        ) : (
+          <a
+            href={product.checkoutUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent('checkout_click', { productId: product.id, provider: product.checkoutProvider })}
+            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 font-extrabold text-sm sm:text-base rounded-xl transition-all w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-500/20 hover:shadow-lg"
+          >
+            <ShoppingCart className="w-5 h-5" />
+            <span>{buttonText}</span>
+          </a>
+        )}
         {isAvailable && product.checkoutUrl !== '' && product.checkoutProvider === 'kiwify' && (
           <p className="text-xs text-slate-500 dark:text-slate-400 font-medium text-center sm:text-left mt-0.5">
             Pagamento processado pela Kiwify.

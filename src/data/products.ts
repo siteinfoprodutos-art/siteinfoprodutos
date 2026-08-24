@@ -279,7 +279,7 @@ export const products: Product[] = [
     createdAt: "2026-08-21T00:00:00Z",
     headline: "Gestão simples e inteligente para o seu negócio.",
     headlineHighlight: "Controle vendas, estoque, fichas técnicas e margens de lucro em um só lugar.",
-    ctaText: "QUERO O AL STUDIO GESTÃO",
+    ctaText: "Comprar agora",
     accessButtonText: "🚀 ACESSAR AL STUDIO GESTÃO",
     features: [
       { title: "✓ Vendas", description: "Registro rápido de vendas diárias e histórico por período." },
@@ -331,7 +331,7 @@ export const products: Product[] = [
     ],
     version: "v1.0",
     checkoutProvider: "kiwify",
-    checkoutUrl: "", // [URL DO CHECKOUT KIWIFY - AL STUDIO GESTÃO]
+    checkoutUrl: "https://pay.kiwify.com.br/RmF6biD",
     appUrl: "https://gestao.alstudiotech.com",
   },
   {
