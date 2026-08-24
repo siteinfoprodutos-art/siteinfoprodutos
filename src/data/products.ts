@@ -74,7 +74,8 @@ export const products: Product[] = [
       "Crie orçamentos profissionais, organize seus clientes e envie propostas pelo WhatsApp.",
     description:
       "O Gerador de Orçamentos Profissionais foi desenvolvido especialmente para autônomos, prestadores de serviços e pequenos empreendedores que precisam gerar propostas comerciais impecáveis em poucos cliques. Elimine planilhas complexas e papéis soltos: cadastre serviços, adicione valores, calcule totais automaticamente com descontos ou taxas e envie um PDF elegante ou mensagem formatada diretamente para o WhatsApp do seu cliente.",
-    price: 39.9,
+    price: 49.9,
+    oldPrice: 89.9,
     billingType: "oneTime",
     availability: "available",
     deliveryType: "webapp",
@@ -169,8 +170,8 @@ export const products: Product[] = [
       "Crie currículos profissionais de forma rápida, moderna e organizada.",
     description:
       "O Gerador de Currículo Profissional foi desenvolvido para ajudar você a criar currículos modernos, elegantes e estruturados em poucos minutos. Basta preencher seus dados, experiências profissionais e formação para obter um documento formatado e pronto para destacar suas habilidades no mercado de trabalho.",
-    price: 29.9,
-    oldPrice: 59.9,
+    price: 49.9,
+    oldPrice: 89.9,
     billingType: "oneTime",
     availability: "available",
     deliveryType: "webapp",
@@ -344,8 +345,8 @@ export const products: Product[] = [
       "Uma agenda digital simples para profissionais e empresas organizarem clientes, serviços, horários e agendamentos.",
     description:
       "O AL Studio Agenda é a solução ideal para salões de beleza, barbearias, clínicas, consultórios, personal trainers e profissionais autônomos que desejam profissionalizar sua rotina de atendimentos. Cadastre clientes, serviços prestados, equipe de profissionais e gerencie horários e disponibilidade em um visual moderno, rápido e sem complicações.",
-    price: 39.9,
-    oldPrice: 69.9,
+    price: 49.9,
+    oldPrice: 89.9,
     billingType: "oneTime",
     availability: "available",
     deliveryType: "webapp",
@@ -357,7 +358,7 @@ export const products: Product[] = [
     createdAt: "2026-08-21T00:00:00Z",
     headline: "Organize sua agenda e seus clientes em poucos cliques.",
     headlineHighlight: "Gerencie atendimentos, serviços e disponibilidade de forma simples e profissional.",
-    ctaText: "QUERO O AL STUDIO AGENDA",
+    ctaText: "Comprar agora",
     accessButtonText: "🚀 ACESSAR AL STUDIO AGENDA",
     features: [
       { title: "✓ Agenda", description: "Visão diária, semanal e mensal de todos os agendamentos." },
@@ -406,8 +407,8 @@ export const products: Product[] = [
     ],
     version: "v1.0",
     checkoutProvider: "kiwify",
-    checkoutUrl: "", // [URL DO CHECKOUT KIWIFY - AL STUDIO AGENDA]
-    appUrl: "https://agenda.alstudiotech.com",
+    checkoutUrl: "https://pay.kiwify.com.br/EifsmJv",
+    appUrl: "https://gestor-agendamento.vercel.app/",
   },
 ];
 

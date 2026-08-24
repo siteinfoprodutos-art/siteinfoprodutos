@@ -103,24 +103,50 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
   };
 
   const isGestao = product.id === 'al-studio-gestao' || product.slug.includes('gestao');
+  const isAgenda = product.id === 'al-studio-agenda' || product.slug.includes('agenda');
 
   // Dynamic content sections
   const heroHeadline = product.headline || (isCurriculo ? "Currículo profissional pronto em poucos minutos." : "Orçamentos profissionais em poucos minutos.");
   const heroHighlight = product.headlineHighlight || product.shortDescription;
 
-  const problemTitle = isGestao
+  const problemTitle = isAgenda
+    ? "Pare de perder agendamentos e controlar horários no papel."
+    : isGestao
     ? "Pare de controlar seu negócio no papel ou em planilhas confusas."
     : isCurriculo
     ? "Pare de formatar currículos do zero."
     : "Pare de montar orçamentos do zero.";
 
-  const problemDesc = isGestao
+  const problemDesc = isAgenda
+    ? "Atendimentos desorganizados, choque de horários e falta de histórico de clientes atrapalham a sua rotina. O AL Studio Agenda organiza tudo em um só lugar de forma simples."
+    : isGestao
     ? "Perder o controle de vendas, não saber se está tendo lucro e ficar sem estoque atrapalha o crescimento da sua empresa. O AL Studio Gestão resolve isso de forma simples e intuitiva."
     : isCurriculo
     ? "Organizar experiências, cursos e contatos não precisa ser cansativo. O Gerador foi criado para entregar um currículo moderno e estruturado em minutos."
     : "Organizar valores, clientes e serviços não precisa tomar seu tempo. O Gerador foi criado para tornar esse processo simples e prático.";
 
-  const problemCards = isGestao
+  const problemCards = isAgenda
+    ? [
+        {
+          icon: <Layers className="w-6 h-6" />,
+          color: "blue",
+          title: "Agenda Inteligente",
+          desc: "Visualização clara por dia e horário para evitar choques e agendamentos duplos.",
+        },
+        {
+          icon: <Zap className="w-6 h-6" />,
+          color: "emerald",
+          title: "Clientes & Serviços",
+          desc: "Cadastre seu catálogo de serviços, preços, duração e histórico completo de atendimentos.",
+        },
+        {
+          icon: <ShieldCheck className="w-6 h-6" />,
+          color: "purple",
+          title: "PWA Offline",
+          desc: "Funciona diretamente no seu smartphone Android ou iPhone sem mensalidades ou taxas.",
+        },
+      ]
+    : isGestao
     ? [
         {
           icon: <Layers className="w-6 h-6" />,
@@ -183,13 +209,22 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
         },
       ];
 
-  const stepsTitle = isGestao
+  const stepsTitle = isAgenda
+    ? "Da organização dos horários ao atendimento perfeito."
+    : isGestao
     ? "Da organização aos resultados em poucos passos."
     : isCurriculo
     ? "Do preenchimento ao currículo em poucos passos."
     : "Do orçamento ao cliente em poucos passos.";
 
-  const steps = isGestao
+  const steps = isAgenda
+    ? [
+        { num: "01", title: "Cadastre seus serviços", desc: "Insira nome do serviço, duração estimada e valor cobrado." },
+        { num: "02", title: "Defina seus horários", desc: "Ajuste os dias de funcionamento e períodos de atendimento." },
+        { num: "03", title: "Realize agendamentos", desc: "Registre atendimentos com dados e histórico do cliente." },
+        { num: "04", title: "Acompanhe sua rotina", desc: "Consulte seus compromissos no celular onde você estiver." },
+      ]
+    : isGestao
     ? [
         { num: "01", title: "Cadastre seus itens", desc: "Adicione os insumos e produtos do seu estoque com custos." },
         { num: "02", title: "Monte fichas técnicas", desc: "Vincule ingredientes ou insumos para calcular o custo unitário." },
@@ -210,7 +245,9 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
         { num: "04", title: "Compartilhe", desc: "Gere o PDF ou prepare o envio direto pelo WhatsApp." },
       ];
 
-  const ctaFinalTitle = isGestao ? (
+  const ctaFinalTitle = isAgenda ? (
+    <>Organize seus horários de forma simples.</>
+  ) : isGestao ? (
     <>Comece agora com o AL Studio Gestão</>
   ) : isCurriculo ? (
     <>Pronto para destacar <br className="hidden sm:block" /> seu currículo?</>
@@ -218,7 +255,9 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
     <>Pronto para profissionalizar <br className="hidden sm:block" /> seus orçamentos?</>
   );
 
-  const ctaFinalSubtitle = isGestao ? (
+  const ctaFinalSubtitle = isAgenda ? (
+    "Tenha uma agenda digital para organizar clientes, serviços, profissionais e horários em um só lugar."
+  ) : isGestao ? (
     "Tenha uma ferramenta simples para organizar vendas, estoque, custos, financeiro e resultados do seu negócio."
   ) : null;
 
