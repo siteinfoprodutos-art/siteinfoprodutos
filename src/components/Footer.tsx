@@ -55,16 +55,16 @@ export function Footer({ onNavigate, onOpenLegal }: FooterProps) {
             </div>
           </div>
 
-          {/* Produtos Column */}
+          {/* Categorias Column */}
           <div className="space-y-3">
             <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-              Produtos
+              Categorias
             </h3>
             <ul className="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               <li>
                 <button
                   type="button"
-                  onClick={() => onNavigate('/produtos?categoria=aplicativo')}
+                  onClick={() => onNavigate('/produtos?categoria=aplicativos')}
                   className="hover:text-blue-600 dark:hover:text-white transition-colors"
                 >
                   Aplicativos
@@ -73,7 +73,16 @@ export function Footer({ onNavigate, onOpenLegal }: FooterProps) {
               <li>
                 <button
                   type="button"
-                  onClick={() => onNavigate('/produtos?categoria=automacao')}
+                  onClick={() => onNavigate('/produtos?categoria=planilhas')}
+                  className="hover:text-blue-600 dark:hover:text-white transition-colors"
+                >
+                  Planilhas
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => onNavigate('/produtos?categoria=automacoes')}
                   className="hover:text-blue-600 dark:hover:text-white transition-colors"
                 >
                   Automações
@@ -82,19 +91,10 @@ export function Footer({ onNavigate, onOpenLegal }: FooterProps) {
               <li>
                 <button
                   type="button"
-                  onClick={() => onNavigate('/produtos?categoria=template')}
+                  onClick={() => onNavigate('/produtos?categoria=kits')}
                   className="hover:text-blue-600 dark:hover:text-white transition-colors"
                 >
-                  Templates
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => onNavigate('/produtos?categoria=kit')}
-                  className="hover:text-blue-600 dark:hover:text-white transition-colors"
-                >
-                  Kits
+                  Kits Completo
                 </button>
               </li>
             </ul>

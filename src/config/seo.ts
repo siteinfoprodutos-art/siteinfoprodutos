@@ -11,9 +11,9 @@ export interface SEOConfig {
 export const seoConfig: SEOConfig = {
   siteName: "AL Studio Tech",
   siteUrl: typeof window !== "undefined" ? window.location.origin : "https://alstudiotech.com",
-  defaultTitle: "AL Studio Tech | Aplicativos e Ferramentas Digitais",
+  defaultTitle: "AL Studio Tech | Aplicativos, Planilhas e Automações",
   titleTemplate: "%s | AL Studio Tech",
-  defaultDescription: "Aplicativos, automações e ferramentas digitais criados para simplificar tarefas e tornar sua rotina mais prática.",
+  defaultDescription: "Encontre aplicativos, planilhas e automações para organizar sua rotina, automatizar tarefas e aumentar a produtividade do seu negócio.",
   defaultImage: "/og-default.jpg",
   locale: "pt_BR"
 };
