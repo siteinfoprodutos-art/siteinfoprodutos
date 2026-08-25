@@ -10,6 +10,14 @@ export const categories: CategoryInfo[] = [
     icon: "Grid",
   },
   {
+    id: "kits",
+    name: "Kits",
+    label: "Kits",
+    title: "KITS COMPLETOS",
+    description: "Combos e kits de ferramentas com mais economia.",
+    icon: "Package",
+  },
+  {
     id: "gestao",
     name: "Gestão",
     label: "Gestão",
@@ -410,6 +418,107 @@ export const products: Product[] = [
     checkoutUrl: "https://pay.kiwify.com.br/EifsmJv",
     appUrl: "https://gestor-agendamento.vercel.app/",
   },
+  {
+    id: "kit-pequeno-negocio",
+    slug: "kit-pequeno-negocio",
+    name: "Kit Pequeno Negócio",
+    category: "Kits",
+    categoriesList: ["Kits", "kit", "Gestão", "Produtividade"],
+    shortDescription:
+      "Pacote ideal com ferramentas para controle de vendas, estoque e orçamentos comerciais.",
+    description:
+      "Um kit de ferramentas digitais criado para ajudar pequenos negócios a organizar vendas, clientes, estoque, caixa, despesas, metas e preços.",
+    price: 49.9,
+    oldPrice: 89.9,
+    billingType: "oneTime",
+    availability: "available",
+    deliveryType: "webapp",
+    accessType: "protected",
+    badge: "NOVO",
+    image: "/assets/kit-pequeno-negocio-preview.svg",
+    featured: false,
+    active: true,
+    createdAt: "2026-08-25T00:00:00Z",
+    headline: "Kit Pequeno Negócio",
+    headlineHighlight:
+      "Um kit de ferramentas digitais criado para ajudar pequenos negócios a organizar vendas, clientes, estoque, caixa, despesas, metas e preços.",
+    ctaText: "QUERO MEU KIT",
+    accessButtonText: "🚀 ACESSAR KIT PEQUENO NEGÓCIO",
+    features: [
+      {
+        title: "📊 Controle de Vendas",
+        description: "Gestão completa das suas vendas diárias, formas de pagamento e acompanhamento de receita.",
+      },
+      {
+        title: "👥 Cadastro de Clientes",
+        description: "Registro centralizado de contatos, histórico de compras e retorno de clientes.",
+      },
+      {
+        title: "📦 Controle de Estoque",
+        description: "Relatório de entradas, saídas com alerta visual e reposição de produtos.",
+      },
+      {
+        title: "💰 Controle de Caixa",
+        description: "Acompanhamento diário e mensal de entradas, saídas e projeção de saldo.",
+      },
+      {
+        title: "💸 Controle de Despesas",
+        description: "Identificação e gestão de custos fixos e variáveis para manter as contas no azul.",
+      },
+      {
+        title: "🎯 Controle de Metas",
+        description: "Definição e acompanhamento de metas financeiras e de vendas para o seu negócio.",
+      },
+      {
+        title: "📈 Dashboard",
+        description: "Painel de controle visual com indicadores em tempo real da saúde da sua empresa.",
+      },
+      {
+        title: "🧮 Calculadora de Preço e Lucro",
+        description: "Ferramenta para cálculo de precificação correta e garantia de margem de lucro real.",
+      },
+    ],
+    benefits: [
+      {
+        title: "Combo Econômico",
+        description: "Acesso a 8 módulos integrados em um único investimento com valor reduzido.",
+      },
+      {
+        title: "Organização Completa",
+        description: "Elimine a desordem financeira e operacional com relatórios e controles integrados.",
+      },
+      {
+        title: "Sem Mensalidade",
+        description: "Pagamento único com acesso vitalício e sem cobranças recorrentes.",
+      },
+      {
+        title: "Acesso no Celular e Computador",
+        description: "Use onde estiver pelo navegador no seu dispositivo favorito.",
+      },
+    ],
+    tutorialSteps: [
+      { step: 1, title: "Acesse o kit", description: "Entre no painel do Kit Pequeno Negócio pela sua área de membros." },
+      { step: 2, title: "Cadastre seus clientes e produtos", description: "Insira os dados iniciais no controle de estoque e cadastro de clientes." },
+      { step: 3, title: "Registre suas movimentações", description: "Lance vendas, entradas de caixa e despesas diárias." },
+      { step: 4, title: "Acompanhe seus resultados", description: "Confira o dashboard em tempo real, defina metas e calcule margens de lucro." },
+    ],
+    faqItems: [
+      { question: "O que vem no Kit Pequeno Negócio?", answer: "O kit inclui 8 ferramentas essenciais: Controle de Vendas, Cadastro de Clientes, Controle de Estoque, Controle de Caixa, Controle de Despesas, Controle de Metas, Dashboard e Calculadora de Preço e Lucro." },
+      { question: "Como recebo o acesso ao kit?", answer: "Após a confirmação do pagamento pela Kiwify, os dados de acesso são liberados imediatamente na sua área de membros." },
+      { question: "Existe alguma mensalidade?", answer: "Não! O Kit Pequeno Negócio é de compra única, com acesso vitalício e sem cobranças mensais." },
+      { question: "Funciona em celulares e computadores?", answer: "Sim! Funciona diretamente em navegadores web no celular, tablet ou PC." },
+    ],
+    targetAudience: "Pequenos comerciantes, prestadores de serviços, autônomos, artesãos, MEIs e vendedores online.",
+    highlights: [
+      "Combo Econômico",
+      "8 Ferramentas Integradas",
+      "Sem mensalidade",
+    ],
+    version: "v1.0",
+    checkoutProvider: "kiwify",
+    checkoutUrl: "https://pay.kiwify.com.br/kit-pequeno-negocio",
+    appUrl: "https://kit-pequeno-negocio.alstudiotech.com",
+  },
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {
@@ -429,7 +538,9 @@ export function getProductBySlug(slug: string): Product | undefined {
         (normalized === "al-studio-gestao" && p.id === "al-studio-gestao") ||
         (normalized === "gestao" && p.id === "al-studio-gestao") ||
         (normalized === "al-studio-agenda" && p.id === "al-studio-agenda") ||
-        (normalized === "agenda" && p.id === "al-studio-agenda"))
+        (normalized === "agenda" && p.id === "al-studio-agenda") ||
+        (normalized === "kit-pequeno-negocio" && p.id === "kit-pequeno-negocio") ||
+        (normalized === "kit-pequeno-negocio-combo" && p.id === "kit-pequeno-negocio"))
   );
 }
 

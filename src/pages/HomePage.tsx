@@ -435,13 +435,13 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
               onClick={() => onNavigate('/produtos')}
               className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors whitespace-nowrap"
             >
-              <span>Ver todos os aplicativos ({products.filter(p => p.active).length})</span>
+              <span>Ver todos os aplicativos ({products.filter(p => p.active && p.category !== 'Kits').length})</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.filter(p => p.active).map((product) => (
+            {products.filter(p => p.active && p.category !== 'Kits').map((product) => (
               <ProductCard
                 key={product.id}
                 product={product}
@@ -620,26 +620,14 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            {/* Kit 1 */}
-            <div className="bg-white dark:bg-[#121824] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-4 shadow-sm hover:border-amber-500/40 transition-all">
-              <div className="flex items-center justify-between">
-                <span className="p-2 rounded-xl bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold text-base">
-                  🏢
-                </span>
-                <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300">
-                  Em Breve
-                </span>
-              </div>
-              <h3 className="font-black text-slate-900 dark:text-white text-base">
-                Kit Pequeno Negócio
-              </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Pacote ideal com ferramentas para controle de vendas, estoque e orçamentos comerciais.
-              </p>
-              <div className="pt-2 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-amber-600 dark:text-amber-400">
-                Combo Econômico
-              </div>
-            </div>
+            {/* Kit 1 - Active Product */}
+            {products.filter(p => p.active && (p.category === 'Kits' || p.category === 'kit' || p.id === 'kit-pequeno-negocio')).map((kitProduct) => (
+              <ProductCard
+                key={kitProduct.id}
+                product={kitProduct}
+                onSelect={onSelectProduct}
+              />
+            ))}
 
             {/* Kit 2 */}
             <div className="bg-white dark:bg-[#121824] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-4 shadow-sm hover:border-amber-500/40 transition-all">
