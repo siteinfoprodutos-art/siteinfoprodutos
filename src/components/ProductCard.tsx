@@ -16,14 +16,12 @@ export function ProductCard({ product, onSelect, featured = false }: ProductCard
 
   const categoryLabels: Record<string, string> = {
     app: 'Aplicativo',
-    automation: 'Automação',
     template: 'Template',
     kit: 'Kit',
   };
 
   const categoryIcons: Record<string, typeof AppWindow> = {
     app: AppWindow,
-    automation: Cpu,
     template: Layers,
     kit: Wrench,
   };

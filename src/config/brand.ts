@@ -45,7 +45,7 @@ export const brand: BrandConfig = {
   name: "AL Studio Tech",
   slogan: "Tecnologia simples para facilitar o seu dia.",
   description:
-    "Aplicativos, automações e ferramentas digitais criados para simplificar tarefas e ajudar pessoas e pequenos negócios a trabalharem melhor.",
+    "Aplicativos, planilhas e ferramentas digitais criados para simplificar tarefas e ajudar pessoas e pequenos negócios a trabalharem melhor.",
   presentation:
     "Na AL Studio Tech, criamos ferramentas digitais simples e acessíveis para resolver problemas reais do dia a dia.",
   contact: {
@@ -64,7 +64,6 @@ instagram: "@alstudiotech",
       { label: "Início", href: "/" },
       { label: "Produtos", href: "/produtos" },
       { label: "Aplicativos", href: "/produtos?categoria=aplicativo", category: "Aplicativo" },
-      { label: "Automações", href: "/produtos?categoria=automacao", category: "Automação" },
       { label: "Templates", href: "/produtos?categoria=template", category: "Template" },
       { label: "Sobre", href: "/sobre" },
     ],

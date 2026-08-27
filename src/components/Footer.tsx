@@ -82,15 +82,6 @@ export function Footer({ onNavigate, onOpenLegal }: FooterProps) {
               <li>
                 <button
                   type="button"
-                  onClick={() => onNavigate('/produtos?categoria=automacoes')}
-                  className="hover:text-blue-600 dark:hover:text-white transition-colors"
-                >
-                  Automações
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
                   onClick={() => onNavigate('/produtos?categoria=kits')}
                   className="hover:text-blue-600 dark:hover:text-white transition-colors"
                 >

@@ -12,6 +12,7 @@ import { PurchaseSuccessPage } from './pages/PurchaseSuccessPage';
 import { AccessPage } from './pages/AccessPage';
 import { AccountPage } from './pages/AccountPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { FocoApp } from './pages/foco/FocoApp';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>(() => {
@@ -109,6 +110,10 @@ export default function App() {
       return <AccountPage onNavigate={navigate} />;
     }
 
+    if (cleanPath === '/app/foco' || cleanPath === '/foco') {
+      return <FocoApp onBackToStore={() => navigate('/')} />;
+    }
+
     if (cleanPath === '/' || cleanPath === '') {
       return (
         <HomePage
@@ -122,6 +127,13 @@ export default function App() {
     // Default fallback: 404 Not Found Page
     return <NotFoundPage onNavigate={navigate} />;
   };
+
+  const cleanPath = currentPath.split('?')[0];
+  const isStandaloneApp = cleanPath === '/app/foco' || cleanPath === '/foco';
+
+  if (isStandaloneApp) {
+    return <FocoApp onBackToStore={() => navigate('/')} />;
+  }
 
   return (
     <ThemeProvider>

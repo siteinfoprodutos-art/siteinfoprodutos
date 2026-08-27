@@ -92,7 +92,7 @@ export function ProductsPage({ initialCategory, onSelectProduct }: ProductsPageP
     <div id="products-catalog-page" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-8 animate-in fade-in duration-300">
       <SEO
         title="Produtos Digitais"
-        description="Explore aplicativos, automações, templates e ferramentas digitais da AL Studio Tech."
+        description="Explore aplicativos, templates e ferramentas digitais da AL Studio Tech."
         canonical="/produtos"
       />
 
@@ -106,7 +106,7 @@ export function ProductsPage({ initialCategory, onSelectProduct }: ProductsPageP
           Explore nossas ferramentas
         </h1>
         <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base max-w-2xl">
-          Aplicativos, automações e recursos digitais criados para tornar tarefas do dia a dia mais simples.
+          Aplicativos, planilhas e recursos digitais criados para tornar tarefas do dia a dia mais simples.
         </p>
       </div>
 

@@ -47,7 +47,7 @@ export function LegalModal({ isOpen, type, onClose }: LegalModalProps) {
               <h3 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base">1. Visão Geral</h3>
               <p>
                 Bem-vindo à <strong className="text-slate-900 dark:text-white">{brand.name}</strong>. Ao acessar nossa vitrine digital e adquirir
-                nossos aplicativos, ferramentas e automações, você concorda com estes Termos de Uso.
+                nossos aplicativos, planilhas e ferramentas digitais, você concorda com estes Termos de Uso.
               </p>
 
               <h3 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base">2. Licença e Uso dos Produtos</h3>

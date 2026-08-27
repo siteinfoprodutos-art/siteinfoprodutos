@@ -58,6 +58,14 @@ export const categories: CategoryInfo[] = [
     icon: "Zap",
   },
   {
+    id: "jovem",
+    name: "Jovem",
+    label: "AL Studio Jovem",
+    title: "AL STUDIO JOVEM",
+    description: "Aplicativos modernos para estudos, rotina e produtividade de jovens e estudantes.",
+    icon: "Sparkles",
+  },
+  {
     id: "outros",
     name: "Outros",
     label: "Outros",
@@ -519,6 +527,99 @@ export const products: Product[] = [
     checkoutUrl: "https://pay.kiwify.com.br/kit-pequeno-negocio",
     appUrl: "https://kit-pequeno-negocio.alstudiotech.com",
   },
+  {
+    id: "al-studio-foco",
+    slug: "al-studio-foco",
+    name: "AL Studio Foco",
+    category: "Jovem",
+    categoriesList: ["Jovem", "AL Studio Jovem", "app", "Produtividade"],
+    shortDescription:
+      "Aplicativo mobile-first para estudantes e jovens organizarem estudos, matérias, provas e sessões de foco com Pomodoro.",
+    description:
+      "O AL Studio Foco é um aplicativo completo, rápido e visualmente moderno criado para ajudar jovens e adolescentes a dominarem sua rotina escolar e acadêmica. Com dashboard 'Meu Dia', lista de tarefas por matéria com prioridades, cronômetro de foco inteligente, calendário para provas e trabalhos, metas diárias/semanais e gamificação com medalhas, tudo funciona 100% no seu celular via IndexedDB, sem exigir login, sem banco de dados externo e totalmente seguro.",
+    price: 29.9,
+    oldPrice: 59.9,
+    billingType: "oneTime",
+    availability: "available",
+    deliveryType: "webapp",
+    accessType: "public",
+    badge: "NOVO",
+    image: "/assets/al-studio-foco-preview.svg",
+    featured: true,
+    active: true,
+    createdAt: "2026-08-27T00:00:00Z",
+    features: [
+      {
+        title: "☀️ Dashboard 'Meu Dia'",
+        description: "Visão rápida do progresso diário, tarefas pendentes, próxima prova e meta de estudo em minutos.",
+      },
+      {
+        title: "✅ Gerenciador de Tarefas por Matéria",
+        description: "Organize afazeres escolares com tags de matérias (Matemática, Português, História, etc.) e prioridades.",
+      },
+      {
+        title: "⏱️ Modo Foco Inteligente",
+        description: "Cronômetro personalizável (15, 25, 30, 45, 60 min) com alerta sonoro e registro automático de sessões.",
+      },
+      {
+        title: "📅 Planejamento de Provas & Entregas",
+        description: "Calendário interativo com contagem regressiva e marcação visual de provas e trabalhos bimestrais.",
+      },
+      {
+        title: "📊 Gráficos de Progresso & Metas",
+        description: "Acompanhe seu tempo de estudo por matéria, evolução semanal e histórico dos últimos 7 dias.",
+      },
+      {
+        title: "🏆 Gamificação & Conquistas",
+        description: "Mantenha a motivação alta com sequências de dias consecutivos (streaks) e medalhas de produtividade.",
+      },
+      {
+        title: "🔒 100% Offline e Privado (IndexedDB)",
+        description: "Funciona direto no navegador sem cadastro ou login; todos os seus dados ficam salvos com segurança no seu aparelho.",
+      },
+    ],
+    benefits: [
+      {
+        title: "Mobile-First & PWA",
+        description: "Projetado com botões grandes e navegação intuitiva ideal para ser usado com uma mão no celular.",
+      },
+      {
+        title: "Foco Sem Distrações",
+        description: "Sem redes sociais ou anúncios; apenas as ferramentas essenciais para estudar com alta performance.",
+      },
+      {
+        title: "Sem Mensalidade",
+        description: "Pagamento único de lançamento com acesso contínuo a todas as atualizações.",
+      },
+      {
+        title: "Backup & Exportação",
+        description: "Exporte e restaure seus dados em arquivo JSON a qualquer momento.",
+      },
+    ],
+    tutorialSteps: [
+      { step: 1, title: "Abra o aplicativo", description: "Inicie o AL Studio Foco no celular ou computador sem precisar criar conta." },
+      { step: 2, title: "Cadastre suas matérias e tarefas", description: "Insira os tópicos e trabalhos que precisa entregar na semana." },
+      { step: 3, title: "Inicie uma sessão de foco", description: "Selecione o tempo desejado (ex: 25 min) e estude sem interrupções." },
+      { step: 4, title: "Acompanhe suas conquistas", description: "Veja seu gráfico semanal crescer e desbloqueie novas medalhas de estudo." },
+    ],
+    faqItems: [
+      { question: "Preciso de internet para usar o AL Studio Foco?", answer: "Não! Após abrir o aplicativo pela primeira vez, ele funciona de forma 100% offline salvando todos os dados no IndexedDB do seu navegador." },
+      { question: "Preciso criar conta ou fazer login?", answer: "Não! O aplicativo não exige cadastro nem senha para que você comece a estudar imediatamente." },
+      { question: "Posso instalar como aplicativo no meu celular?", answer: "Sim! Ele é um PWA (Progressive Web App). Basta tocar em 'Adicionar à tela de início' no seu navegador Safari ou Chrome." },
+      { question: "Como funciona a exportação de dados?", answer: "Na tela de Configurações, você pode clicar em 'Exportar Dados' para salvar um arquivo de backup com todas as suas tarefas e sessões." },
+    ],
+    targetAudience: "Estudantes do ensino fundamental, médio, pré-vestibular, concurseiros e universitários.",
+    highlights: [
+      "Mobile-First",
+      "Pomodoro Integrado",
+      "100% Offline (IndexedDB)",
+      "Sem login ou cadastro",
+    ],
+    version: "v1.0",
+    checkoutProvider: "kiwify",
+    checkoutUrl: "https://pay.kiwify.com.br/al-studio-foco",
+    appUrl: "/app/foco",
+  },
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {
@@ -540,7 +641,9 @@ export function getProductBySlug(slug: string): Product | undefined {
         (normalized === "al-studio-agenda" && p.id === "al-studio-agenda") ||
         (normalized === "agenda" && p.id === "al-studio-agenda") ||
         (normalized === "kit-pequeno-negocio" && p.id === "kit-pequeno-negocio") ||
-        (normalized === "kit-pequeno-negocio-combo" && p.id === "kit-pequeno-negocio"))
+        (normalized === "kit-pequeno-negocio-combo" && p.id === "kit-pequeno-negocio") ||
+        (normalized === "al-studio-foco" && p.id === "al-studio-foco") ||
+        (normalized === "foco" && p.id === "al-studio-foco"))
   );
 }
 

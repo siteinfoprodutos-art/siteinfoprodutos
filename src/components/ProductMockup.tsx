@@ -10,6 +10,31 @@ export function ProductMockup({ compact = false, productId = 'gerador-orcamentos
   const isGestao = productId === 'al-studio-gestao';
   const isAgenda = productId === 'al-studio-agenda';
   const isKitPequenoNegocio = productId === 'kit-pequeno-negocio';
+  const isFoco = productId === 'al-studio-foco';
+
+  if (isFoco) {
+    return (
+      <div
+        id="product-mockup-foco-wrapper"
+        className={`relative w-full rounded-3xl bg-gradient-to-br from-indigo-950 via-[#0b0f17] to-slate-950 p-2 sm:p-3 shadow-2xl border border-indigo-500/40 overflow-hidden ${
+          compact ? 'max-w-md' : 'max-w-2xl mx-auto'
+        }`}
+      >
+        <div className="absolute -top-20 -left-20 w-64 h-64 bg-indigo-500/25 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-sky-500/20 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative rounded-2xl bg-[#070b12] border border-indigo-500/30 shadow-2xl overflow-hidden group">
+          <img
+            src="/assets/al-studio-foco-preview.svg"
+            alt="AL Studio Foco - Aplicativo de Estudos e Pomodoro"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            className="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-300 rounded-xl"
+          />
+        </div>
+      </div>
+    );
+  }
 
   if (isKitPequenoNegocio) {
     return (

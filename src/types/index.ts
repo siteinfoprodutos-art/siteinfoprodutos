@@ -1,6 +1,5 @@
 export type ProductCategory = 
   | "app" 
-  | "automation" 
   | "template" 
   | "kit" 
   | "Gestão" 

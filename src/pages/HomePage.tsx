@@ -5,7 +5,6 @@ import {
   Zap, 
   BarChart3, 
   Rocket, 
-  Bot, 
   FileSpreadsheet, 
   Package, 
   ShieldCheck, 
@@ -38,7 +37,7 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
     '@type': 'Organization',
     'name': brand.name,
     'url': seoConfig.siteUrl,
-    'description': 'Encontre aplicativos, planilhas e automações para organizar sua rotina, automatizar tarefas e aumentar a produtividade do seu negócio.'
+    'description': 'Encontre aplicativos, planilhas e ferramentas digitais para organizar sua rotina e aumentar a produtividade do seu negócio.'
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -51,8 +50,8 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
   return (
     <div id="home-page" className="pb-20 space-y-16 sm:space-y-24">
       <SEO
-        title="AL Studio Tech | Aplicativos, Planilhas e Automações"
-        description="Encontre aplicativos, planilhas e automações para organizar sua rotina, automatizar tarefas e aumentar a produtividade do seu negócio."
+        title="AL Studio Tech | Aplicativos, Planilhas e Ferramentas Digitais"
+        description="Encontre aplicativos, planilhas e ferramentas digitais para organizar sua rotina e aumentar a produtividade do seu negócio."
         canonical="/"
         jsonLd={organizationSchema}
       />
@@ -78,7 +77,7 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
                 Ferramentas digitais para trabalhar melhor, vender mais e perder menos tempo.
               </h1>
               <p className="text-slate-300 dark:text-slate-300 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl font-normal">
-                Planilhas, aplicativos e automações prontas para simplificar sua rotina e ajudar seu negócio a crescer.
+                Planilhas, aplicativos e ferramentas prontas para simplificar sua rotina e ajudar seu negócio a crescer.
               </p>
             </div>
 
@@ -99,14 +98,6 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
                 className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold text-sm sm:text-base rounded-xl backdrop-blur-md border border-white/15 transition-all hover:-translate-y-0.5"
               >
                 <span>📊 Ver planilhas</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => scrollToSection('automacoes-section')}
-                className="inline-flex items-center justify-center gap-2 px-4 py-3 bg-transparent hover:bg-white/5 text-slate-300 hover:text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/10 transition-colors"
-              >
-                <span>🤖 Conhecer automações</span>
               </button>
             </div>
 
@@ -129,7 +120,7 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
         </section>
 
         {/* ================================================== */}
-        {/* 3. BLOCO ORGANIZE / AUTOMATIZE / ESCALE */}
+        {/* 3. BLOCO ORGANIZE / SISTEMAS WEB */}
         {/* ================================================== */}
         <section id="caminhos-section" className="mt-16 sm:mt-24 space-y-8">
           <div className="text-center space-y-3 max-w-3xl mx-auto">
@@ -141,7 +132,7 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
             
             {/* CARD 1: ORGANIZE */}
             <div className="group bg-white dark:bg-[#121824] border border-slate-200 dark:border-slate-800 rounded-3xl p-8 flex flex-col justify-between hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all shadow-sm hover:shadow-xl relative overflow-hidden">
@@ -175,7 +166,7 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
               </div>
             </div>
 
-            {/* CARD 2: AUTOMATIZE */}
+            {/* CARD 2: APLICATIVOS */}
             <div className="group bg-white dark:bg-[#121824] border border-slate-200 dark:border-slate-800 rounded-3xl p-8 flex flex-col justify-between hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all shadow-sm hover:shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-emerald-500/20 transition-all" />
               <div className="space-y-6 relative z-10">
@@ -187,7 +178,7 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
                     Sistemas Web & Apps
                   </span>
                   <h3 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight">
-                    AUTOMATIZE
+                    APLICATIVOS
                   </h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed pt-1">
                     Aplicativos completos para substituir controles manuais e deixar sua rotina muito mais simples.
@@ -202,38 +193,6 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
                   className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm rounded-xl transition-all shadow-md shadow-emerald-500/20"
                 >
                   <span>Ver aplicativos</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-
-            {/* CARD 3: ESCALE */}
-            <div className="group bg-white dark:bg-[#121824] border border-slate-200 dark:border-slate-800 rounded-3xl p-8 flex flex-col justify-between hover:border-purple-500/50 dark:hover:border-purple-500/50 transition-all shadow-sm hover:shadow-xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-purple-500/20 transition-all" />
-              <div className="space-y-6 relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl font-black shadow-xs">
-                  🤖
-                </div>
-                <div className="space-y-2">
-                  <span className="text-xs font-black uppercase tracking-widest text-purple-600 dark:text-purple-400">
-                    Alta Performance
-                  </span>
-                  <h3 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight">
-                    ESCALE
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed pt-1">
-                    Automações inteligentes para economizar tempo, reduzir tarefas repetitivas e aumentar sua produtividade.
-                  </p>
-                </div>
-              </div>
-
-              <div className="pt-8 relative z-10">
-                <button
-                  type="button"
-                  onClick={() => scrollToSection('automacoes-section')}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 bg-slate-100 hover:bg-purple-600 text-slate-900 hover:text-white dark:bg-slate-800 dark:hover:bg-purple-600 dark:text-white font-extrabold text-sm rounded-xl transition-all shadow-2xs"
-                >
-                  <span>Ver automações</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -452,154 +411,6 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
         </section>
 
         {/* ================================================== */}
-        {/* STRATEGIC CALLOUT 3 */}
-        {/* ================================================== */}
-        <div className="mt-16 sm:mt-20 py-4 px-6 rounded-2xl bg-purple-50/70 dark:bg-purple-950/30 border border-purple-200/80 dark:border-purple-800/40 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div className="flex items-center gap-3">
-            <span className="p-2 rounded-xl bg-purple-600 text-white font-bold text-xs">Alta Produtividade</span>
-            <p className="text-sm font-bold text-slate-800 dark:text-slate-200">
-              🤖 Quer economizar ainda mais tempo?
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => scrollToSection('automacoes-section')}
-            className="text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1"
-          >
-            <span>Conhecer nossas automações</span>
-            <ChevronRight className="w-3.5 h-3.5" />
-          </button>
-        </div>
-
-        {/* ================================================== */}
-        {/* 6. SEÇÃO AUTOMAÇÕES (AUTOMATIZE TAREFAS REPETITIVAS) */}
-        {/* ================================================== */}
-        <section id="automacoes-section" className="mt-16 sm:mt-24 space-y-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-5">
-            <div className="space-y-1.5">
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">
-                <Bot className="w-4 h-4" />
-                <span>Nível 3 • Escala & Automação</span>
-              </div>
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-                🤖 Automatize tarefas repetitivas
-              </h2>
-              <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm">
-                Deixe a tecnologia cuidar das tarefas que consomem seu tempo.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            {/* Automation Card 1 */}
-            <div className="bg-gradient-to-br from-white to-purple-50/50 dark:from-[#121824] dark:to-purple-950/20 border border-slate-200 dark:border-slate-800 rounded-3xl p-7 space-y-4 shadow-sm hover:border-purple-500/40 transition-all">
-              <div className="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-xl">
-                ⚡
-              </div>
-              <div className="space-y-2">
-                <span className="text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300">
-                  Em Desenvolvimento
-                </span>
-                <h3 className="text-xl font-black text-slate-900 dark:text-white">
-                  Automação de WhatsApp
-                </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                  Lembretes automáticos de agendamentos, confirmações de ordens de serviço e mensagens de pós-venda.
-                </p>
-              </div>
-              <ul className="space-y-2 pt-2 border-t border-slate-200/60 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-purple-500" />
-                  <span>Sem digitação manual</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-purple-500" />
-                  <span>Redução de faltas em 80%</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Automation Card 2 */}
-            <div className="bg-gradient-to-br from-white to-purple-50/50 dark:from-[#121824] dark:to-purple-950/20 border border-slate-200 dark:border-slate-800 rounded-3xl p-7 space-y-4 shadow-sm hover:border-purple-500/40 transition-all">
-              <div className="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-xl">
-                📄
-              </div>
-              <div className="space-y-2">
-                <span className="text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300">
-                  Em Desenvolvimento
-                </span>
-                <h3 className="text-xl font-black text-slate-900 dark:text-white">
-                  Automação de Orçamentos
-                </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                  Criação e envio imediato de PDF de orçamentos com calculadoras automáticas e integração de propostas.
-                </p>
-              </div>
-              <ul className="space-y-2 pt-2 border-t border-slate-200/60 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-purple-500" />
-                  <span>Respostas em menos de 1 minuto</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-purple-500" />
-                  <span>Cálculo automático de margens</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Automation Card 3 */}
-            <div className="bg-gradient-to-br from-white to-purple-50/50 dark:from-[#121824] dark:to-purple-950/20 border border-slate-200 dark:border-slate-800 rounded-3xl p-7 space-y-4 shadow-sm hover:border-purple-500/40 transition-all">
-              <div className="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-xl">
-                📊
-              </div>
-              <div className="space-y-2">
-                <span className="text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300">
-                  Em Desenvolvimento
-                </span>
-                <h3 className="text-xl font-black text-slate-900 dark:text-white">
-                  Automação de Relatórios
-                </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                  Consolidação diária e semanal do seu faturamento enviada diretamente para seu e-mail ou aplicativo.
-                </p>
-              </div>
-              <ul className="space-y-2 pt-2 border-t border-slate-200/60 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-purple-500" />
-                  <span>Visão clara do seu negócio</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-purple-500" />
-                  <span>Relatórios executivos prontos</span>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-
-          <div className="bg-purple-900/10 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-800/60 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="space-y-1 text-center sm:text-left">
-              <h4 className="font-extrabold text-slate-900 dark:text-white text-sm sm:text-base">
-                Precisa de uma automação personalizada para sua empresa?
-              </h4>
-              <p className="text-xs text-slate-600 dark:text-slate-400">
-                Fale diretamente com nossa equipe técnica da AL Studio Tech.
-              </p>
-            </div>
-            <a
-              href={brand.contact.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-purple-500/20 whitespace-nowrap"
-            >
-              <MessageSquare className="w-4 h-4" />
-              <span>Solicitar automação sob medida</span>
-            </a>
-          </div>
-        </section>
-
-        {/* ================================================== */}
         {/* 7. SEÇÃO COMBOS / KITS */}
         {/* ================================================== */}
         <section id="kits-section" className="mt-16 sm:mt-24 space-y-8">
@@ -761,7 +572,7 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
                 🚀 Evolução constante
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                Novos aplicativos, planilhas e automações sendo adicionados constantemente.
+                Novos aplicativos, planilhas e ferramentas sendo adicionados constantemente.
               </p>
             </div>
 
@@ -789,7 +600,7 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
                   onClick={() => scrollToSection('organize-section')}
                   className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-slate-950 font-black text-sm rounded-xl hover:bg-slate-100 transition-all shadow-md hover:-translate-y-0.5"
                 >
-                  <span>📊 Quero organizar</span>
+                  <span>📊 Ver planilhas</span>
                 </button>
 
                 <button
@@ -797,15 +608,7 @@ export function HomePage({ onNavigate, onSelectProduct }: HomePageProps) {
                   onClick={() => scrollToSection('aplicativos-section')}
                   className="inline-flex items-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-black text-sm rounded-xl transition-all shadow-md hover:-translate-y-0.5"
                 >
-                  <span>🚀 Quero automatizar</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection('automacoes-section')}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-purple-600 hover:bg-purple-500 text-white font-black text-sm rounded-xl transition-all shadow-md hover:-translate-y-0.5"
-                >
-                  <span>🤖 Quero escalar</span>
+                  <span>🚀 Ver aplicativos</span>
                 </button>
               </div>
             </div>

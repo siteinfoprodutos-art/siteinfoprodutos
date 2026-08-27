@@ -11,7 +11,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
     <div id="about-page" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12">
       <SEO
         title="Sobre"
-        description="Conheça a AL Studio Tech: ferramentas, aplicativos e automações criadas para simplificar suas tarefas do dia a dia."
+        description="Conheça a AL Studio Tech: ferramentas, planilhas e aplicativos criados para simplificar suas tarefas do dia a dia."
         canonical="/sobre"
       />
       {/* Page Header */}
