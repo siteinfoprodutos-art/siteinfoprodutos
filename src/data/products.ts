@@ -66,6 +66,14 @@ export const categories: CategoryInfo[] = [
     icon: "Sparkles",
   },
   {
+    id: "fitness",
+    name: "Fitness",
+    label: "AL Studio Fitness",
+    title: "AL STUDIO FITNESS",
+    description: "Aplicativos modernos para controle de treinos, musculação e desenvolvimento físico.",
+    icon: "Dumbbell",
+  },
+  {
     id: "outros",
     name: "Outros",
     label: "Outros",
@@ -620,6 +628,99 @@ export const products: Product[] = [
     checkoutUrl: "https://pay.kiwify.com.br/al-studio-foco",
     appUrl: "/app/foco",
   },
+  {
+    id: "al-studio-fitness",
+    slug: "al-studio-fitness",
+    name: "AL Studio Fitness",
+    category: "Fitness",
+    categoriesList: ["Fitness", "AL Studio Fitness", "app", "Produtividade"],
+    shortDescription:
+      "Aplicativo mobile-first para controle de treinos, histórico de cargas, registro de medidas corporais e gamificação 100% offline.",
+    description:
+      "O AL Studio Fitness é um aplicativo moderno e intuitivo de musculação e desenvolvimento físico. Organize seus treinos (Push, Pull, Legs, ABC, Full Body ou personalizados), registre cargas e repetições em tempo real, cronometre descansos com alerta sonoro, acompanhe métricas corporais e gráficos de evolução, suba de nível com gamificação e mantenha seus dados 100% seguros no seu dispositivo via IndexedDB, sem login e sem mensalidade.",
+    price: 29.9,
+    oldPrice: 59.9,
+    billingType: "oneTime",
+    availability: "available",
+    deliveryType: "webapp",
+    accessType: "public",
+    badge: "NOVO",
+    image: "/assets/al-studio-fitness-preview.svg",
+    featured: true,
+    active: true,
+    createdAt: "2026-08-27T00:00:00Z",
+    headline: "Transforme seus treinos e acompanhe sua evolução física dia a dia.",
+    headlineHighlight: "Controle de treinos, histórico de cargas, registro de medidas e gamificação 100% offline.",
+    ctaText: "ACESSAR AGORA",
+    accessButtonText: "🚀 ACESSAR AL STUDIO FITNESS",
+    features: [
+      {
+        title: "🏋️ Gerenciador de Treinos & Rotinas",
+        description: "Rotinas completas (Push/Pull/Legs, ABC, Full Body e personalizadas) com séries, repetições, cargas e tempo de descanso.",
+      },
+      {
+        title: "⏱️ Modo Treino Ativo & Cronômetro",
+        description: "Interface focada durante a sessão com cronômetro de descanso integrado, bipe sonoro e marcação de séries concluídas.",
+      },
+      {
+        title: "📈 Acompanhamento de Evolução & Cargas",
+        description: "Gráficos de evolução corporal (peso, braço, tórax, cintura, coxas) e histórico de progressão de carga por exercício.",
+      },
+      {
+        title: "🏆 Gamificação, Níveis & Conquistas",
+        description: "Ganhe XP a cada treino e pesagem, suba de nível (Bronze até Titã) e mantenha sua sequência de consistência (streaks).",
+      },
+      {
+        title: "📸 Diário & Galeria de Fotos de Evolução",
+        description: "Compare seu antes e depois com galeria de fotos privada salva diretamente no seu aparelho.",
+      },
+      {
+        title: "🔒 100% Offline & Privado (IndexedDB)",
+        description: "Todos os seus treinos e fotos ficam salvos exclusivamente no seu dispositivo, sem cadastro ou envio para servidores externos.",
+      },
+    ],
+    benefits: [
+      {
+        title: "Mobile-First & PWA",
+        description: "Desenvolvido especificamente para uso com uma mão na academia pelo celular, sem travamentos.",
+      },
+      {
+        title: "Sem Mensalidade",
+        description: "Acesso direto à ferramenta sem assinaturas recorrentes ou cobranças adicionais.",
+      },
+      {
+        title: "Backup & Exportação",
+        description: "Exporte e importe todo seu histórico e medidas em arquivo JSON a qualquer momento.",
+      },
+      {
+        title: "Foco Total na Prática",
+        description: "Sem propagandas ou telas complexas; interface rápida e direta ao ponto.",
+      },
+    ],
+    tutorialSteps: [
+      { step: 1, title: "Abra o aplicativo", description: "Inicie o AL Studio Fitness no seu smartphone ou computador sem precisar de cadastro." },
+      { step: 2, title: "Personalize seu perfil", description: "Informe seu objetivo (hipertrofia, emagrecimento, força), peso inicial e frequência semanal." },
+      { step: 3, title: "Inicie seu treino", description: "Selecione a rotina do dia e registre as cargas e repetições realizadas série a série." },
+      { step: 4, title: "Monitore sua evolução", description: "Registre suas pesagens e medidas semanais e acompanhe o ganho de XP e subida de nível." },
+    ],
+    faqItems: [
+      { question: "Preciso de internet para usar na academia?", answer: "Não! O aplicativo funciona de forma 100% offline, perfeito para academias sem sinal de internet." },
+      { question: "Preciso criar conta ou fazer login?", answer: "Não! O acesso é instantâneo e todos os dados são armazenados localmente no seu dispositivo via IndexedDB." },
+      { question: "Posso instalar no celular como app?", answer: "Sim! Por ser uma PWA (Progressive Web App), basta selecionar 'Adicionar à tela de início' no seu navegador." },
+      { question: "Como funciona a exportação de dados?", answer: "Nas Configurações do app, você pode exportar um arquivo de backup com todo o seu histórico a qualquer momento." },
+    ],
+    targetAudience: "Praticantes de musculação, calistenia, iniciantes e atletas que buscam progredir cargas e medir resultados.",
+    highlights: [
+      "Mobile-First",
+      "Progressão de Cargas",
+      "Gamificação com Níveis & XP",
+      "100% Offline e Privado",
+    ],
+    version: "v1.0",
+    checkoutProvider: "kiwify",
+    checkoutUrl: "https://pay.kiwify.com.br/al-studio-fitness",
+    appUrl: "/app/fitness",
+  },
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {
@@ -643,7 +744,11 @@ export function getProductBySlug(slug: string): Product | undefined {
         (normalized === "kit-pequeno-negocio" && p.id === "kit-pequeno-negocio") ||
         (normalized === "kit-pequeno-negocio-combo" && p.id === "kit-pequeno-negocio") ||
         (normalized === "al-studio-foco" && p.id === "al-studio-foco") ||
-        (normalized === "foco" && p.id === "al-studio-foco"))
+        (normalized === "foco" && p.id === "al-studio-foco") ||
+        (normalized === "al-studio-fitness" && p.id === "al-studio-fitness") ||
+        (normalized === "fitness" && p.id === "al-studio-fitness") ||
+        (normalized === "evolucao" && p.id === "al-studio-fitness") ||
+        (normalized === "al-studio-evolucao" && p.id === "al-studio-fitness"))
   );
 }
 

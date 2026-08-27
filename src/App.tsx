@@ -13,6 +13,7 @@ import { AccessPage } from './pages/AccessPage';
 import { AccountPage } from './pages/AccountPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { FocoApp } from './pages/foco/FocoApp';
+import { FitnessApp } from './fitness/FitnessApp';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>(() => {
@@ -114,6 +115,17 @@ export default function App() {
       return <FocoApp onBackToStore={() => navigate('/')} />;
     }
 
+    if (
+      cleanPath === '/fitness' ||
+      cleanPath === '/evolucao' ||
+      cleanPath === '/app/fitness' ||
+      cleanPath === '/app/evolucao' ||
+      cleanPath === '/al-studio-fitness' ||
+      cleanPath === '/app/al-studio-fitness'
+    ) {
+      return <FitnessApp onBackToStore={() => navigate('/')} />;
+    }
+
     if (cleanPath === '/' || cleanPath === '') {
       return (
         <HomePage
@@ -130,9 +142,20 @@ export default function App() {
 
   const cleanPath = currentPath.split('?')[0];
   const isStandaloneApp = cleanPath === '/app/foco' || cleanPath === '/foco';
+  const isFitnessStandalone =
+    cleanPath === '/fitness' ||
+    cleanPath === '/evolucao' ||
+    cleanPath === '/app/fitness' ||
+    cleanPath === '/app/evolucao' ||
+    cleanPath === '/al-studio-fitness' ||
+    cleanPath === '/app/al-studio-fitness';
 
   if (isStandaloneApp) {
     return <FocoApp onBackToStore={() => navigate('/')} />;
+  }
+
+  if (isFitnessStandalone) {
+    return <FitnessApp onBackToStore={() => navigate('/')} />;
   }
 
   return (
