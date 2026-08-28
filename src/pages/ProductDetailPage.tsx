@@ -104,12 +104,18 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
 
   const isGestao = product.id === 'al-studio-gestao' || product.slug.includes('gestao');
   const isAgenda = product.id === 'al-studio-agenda' || product.slug.includes('agenda');
+  const isFoco = product.id === 'al-studio-foco' || product.slug.includes('foco');
+  const isFitness = product.id === 'al-studio-fitness' || product.slug.includes('fitness');
 
   // Dynamic content sections
-  const heroHeadline = product.headline || (isCurriculo ? "Currículo profissional pronto em poucos minutos." : "Orçamentos profissionais em poucos minutos.");
+  const heroHeadline = product.headline || (isCurriculo ? "Currículo profissional pronto em poucos minutos." : isFoco ? "Domine sua rotina de estudos com foco e organização." : isFitness ? "Transforme seus treinos e acompanhe sua evolução física dia a dia." : "Orçamentos profissionais em poucos minutos.");
   const heroHighlight = product.headlineHighlight || product.shortDescription;
 
-  const problemTitle = isAgenda
+  const problemTitle = isFoco
+    ? "Pare de procrastinar e perder prazos escolares ou de provas."
+    : isFitness
+    ? "Pare de treinar sem registrar cargas e sem ver evolução real."
+    : isAgenda
     ? "Pare de perder agendamentos e controlar horários no papel."
     : isGestao
     ? "Pare de controlar seu negócio no papel ou em planilhas confusas."
@@ -117,7 +123,11 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
     ? "Pare de formatar currículos do zero."
     : "Pare de montar orçamentos do zero.";
 
-  const problemDesc = isAgenda
+  const problemDesc = isFoco
+    ? "Matérias acumuladas, falta de foco ao estudar e prazos esquecidos geram estresse e desorganização. O AL Studio Foco organiza seus estudos e mantém seu ritmo diário com facilidade."
+    : isFitness
+    ? "Esquecer as cargas da semana anterior e não acompanhar medidas corporais atrasa seus resultados. O AL Studio Fitness centraliza seus treinos, repetições e evolução física de forma simples."
+    : isAgenda
     ? "Atendimentos desorganizados, choque de horários e falta de histórico de clientes atrapalham a sua rotina. O AL Studio Agenda organiza tudo em um só lugar de forma simples."
     : isGestao
     ? "Perder o controle de vendas, não saber se está tendo lucro e ficar sem estoque atrapalha o crescimento da sua empresa. O AL Studio Gestão resolve isso de forma simples e intuitiva."
@@ -125,7 +135,49 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
     ? "Organizar experiências, cursos e contatos não precisa ser cansativo. O Gerador foi criado para entregar um currículo moderno e estruturado em minutos."
     : "Organizar valores, clientes e serviços não precisa tomar seu tempo. O Gerador foi criado para tornar esse processo simples e prático.";
 
-  const problemCards = isAgenda
+  const problemCards = isFoco
+    ? [
+        {
+          icon: <Zap className="w-6 h-6" />,
+          color: "indigo",
+          title: "Modo Foco Pomodoro",
+          desc: "Cronômetro com sessões de 15, 25, 45 ou 60 minutos e aviso sonoro para estudo sem distrações.",
+        },
+        {
+          icon: <Layers className="w-6 h-6" />,
+          color: "blue",
+          title: "Tarefas por Matéria",
+          desc: "Organize tarefas escolares com tags de matérias, prioridades e metas de estudo diárias.",
+        },
+        {
+          icon: <ShieldCheck className="w-6 h-6" />,
+          color: "emerald",
+          title: "100% Offline & Seguro",
+          desc: "Funciona direto no celular sem precisar de internet ou criar conta, com dados salvos no aparelho.",
+        },
+      ]
+    : isFitness
+    ? [
+        {
+          icon: <Zap className="w-6 h-6" />,
+          color: "emerald",
+          title: "Progressão de Cargas",
+          desc: "Registre séries, repetições e pesos em tempo real durante a execução do seu treino.",
+        },
+        {
+          icon: <Layers className="w-6 h-6" />,
+          color: "blue",
+          title: "Rotinas Personalizadas",
+          desc: "Treinos completos de Push, Pull, Legs, ABC, Full Body ou rotinas customizadas.",
+        },
+        {
+          icon: <ShieldCheck className="w-6 h-6" />,
+          color: "purple",
+          title: "Medidas & Gamificação",
+          desc: "Acompanhe medidas corporais, fotos de evolução e ganhe XP a cada treino concluído.",
+        },
+      ]
+    : isAgenda
     ? [
         {
           icon: <Layers className="w-6 h-6" />,
@@ -209,7 +261,11 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
         },
       ];
 
-  const stepsTitle = isAgenda
+  const stepsTitle = isFoco
+    ? "Da organização diária ao foco total nos estudos."
+    : isFitness
+    ? "Do aquecimento aos resultados físicos em poucos passos."
+    : isAgenda
     ? "Da organização dos horários ao atendimento perfeito."
     : isGestao
     ? "Da organização aos resultados em poucos passos."
@@ -217,7 +273,21 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
     ? "Do preenchimento ao currículo em poucos passos."
     : "Do orçamento ao cliente em poucos passos.";
 
-  const steps = isAgenda
+  const steps = isFoco
+    ? [
+        { num: "01", title: "Cadastre suas matérias", desc: "Adicione as disciplinas que você estuda (Matemática, Biologia, etc.)." },
+        { num: "02", title: "Defina suas metas", desc: "Estabeleça quanto tempo deseja estudar por dia e cadastre suas tarefas." },
+        { num: "03", title: "Inicie o Modo Foco", desc: "Use o cronômetro Pomodoro integrado para manter a concentração máxima." },
+        { num: "04", title: "Acompanhe seu progresso", desc: "Visualize gráficos semanais, ganhe XP e mantenha seus streaks." },
+      ]
+    : isFitness
+    ? [
+        { num: "01", title: "Monte sua rotina", desc: "Escolha ou crie seus treinos de musculação ou calistenia." },
+        { num: "02", title: "Inicie a sessão", desc: "Abra o modo treino ativo com cronômetro de descanso entre séries." },
+        { num: "03", title: "Anote as cargas", desc: "Registre cada série concluída com pesos e repetições reais." },
+        { num: "04", title: "Acompanhe a evolução", desc: "Monitore o histórico de cargas, peso corporal e medidas físicas." },
+      ]
+    : isAgenda
     ? [
         { num: "01", title: "Cadastre seus serviços", desc: "Insira nome do serviço, duração estimada e valor cobrado." },
         { num: "02", title: "Defina seus horários", desc: "Ajuste os dias de funcionamento e períodos de atendimento." },
@@ -245,7 +315,11 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
         { num: "04", title: "Compartilhe", desc: "Gere o PDF ou prepare o envio direto pelo WhatsApp." },
       ];
 
-  const ctaFinalTitle = isAgenda ? (
+  const ctaFinalTitle = isFoco ? (
+    <>Pronto para transformar <br className="hidden sm:block" /> sua rotina de estudos?</>
+  ) : isFitness ? (
+    <>Pronto para levar seus treinos <br className="hidden sm:block" /> para o próximo nível?</>
+  ) : isAgenda ? (
     <>Organize seus horários de forma simples.</>
   ) : isGestao ? (
     <>Comece agora com o AL Studio Gestão</>
@@ -255,7 +329,11 @@ export function ProductDetailPage({ slug, onBack, onNavigate }: ProductDetailPag
     <>Pronto para profissionalizar <br className="hidden sm:block" /> seus orçamentos?</>
   );
 
-  const ctaFinalSubtitle = isAgenda ? (
+  const ctaFinalSubtitle = isFoco ? (
+    "Tenha um aplicativo completo para organizar matérias, tarefas, provas, cronômetro de foco e metas em um só lugar."
+  ) : isFitness ? (
+    "Tenha um aplicativo mobile-first 100% offline para registrar treinos, cargas, medidas e fotos de evolução."
+  ) : isAgenda ? (
     "Tenha uma agenda digital para organizar clientes, serviços, profissionais e horários em um só lugar."
   ) : isGestao ? (
     "Tenha uma ferramenta simples para organizar vendas, estoque, custos, financeiro e resultados do seu negócio."

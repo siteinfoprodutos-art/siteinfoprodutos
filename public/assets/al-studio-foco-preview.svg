@@ -1,49 +1,60 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
   <defs>
     <!-- Background Gradients -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#090d16" />
-      <stop offset="50%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#050811" />
+    <linearGradient id="focoBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060913" />
+      <stop offset="45%" stop-color="#0c1224" />
+      <stop offset="100%" stop-color="#040711" />
     </linearGradient>
 
-    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    <linearGradient id="focoCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
     </linearGradient>
 
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Indigo - Violet - Cyan Gradients -->
+    <linearGradient id="focoPrimaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <linearGradient id="focoTimerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#38bdf8" />
       <stop offset="50%" stop-color="#6366f1" />
-      <stop offset="100%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
     </linearGradient>
 
-    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f97316" />
-      <stop offset="100%" stop-color="#fb923c" />
-    </linearGradient>
-
-    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="focoEmeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#10b981" />
-      <stop offset="100%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <linearGradient id="focoAmberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ea580c" />
     </linearGradient>
 
     <!-- Glow filters -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="16" result="blur" />
+    <filter id="focoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="20" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="phoneShadow" x="-15%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.75" />
     </filter>
   </defs>
 
   <!-- Background Base -->
-  <rect width="1200" height="675" fill="url(#bgGrad)" />
+  <rect width="1200" height="675" fill="url(#focoBgGrad)" />
 
-  <!-- Ambient background glow spheres -->
-  <circle cx="200" cy="180" r="160" fill="#6366f1" opacity="0.15" filter="url(#glow)" />
-  <circle cx="1000" cy="500" r="200" fill="#38bdf8" opacity="0.12" filter="url(#glow)" />
-  <circle cx="600" cy="300" r="140" fill="#a855f7" opacity="0.1" filter="url(#glow)" />
+  <!-- Ambient background glow spheres (Young / Tech / Focus aesthetic) -->
+  <circle cx="210" cy="170" r="190" fill="#6366f1" opacity="0.18" filter="url(#focoGlow)" />
+  <circle cx="980" cy="510" r="230" fill="#06b6d4" opacity="0.14" filter="url(#focoGlow)" />
+  <circle cx="620" cy="330" r="160" fill="#a855f7" opacity="0.11" filter="url(#focoGlow)" />
 
-  <!-- Grid overlay lines -->
+  <!-- Subtle Blueprint Tech Grid Overlay -->
   <g opacity="0.04" stroke="#ffffff" stroke-width="1">
     <line x1="0" y1="135" x2="1200" y2="135" />
     <line x1="0" y1="270" x2="1200" y2="270" />
@@ -55,163 +66,189 @@
     <line x1="960" y1="0" x2="960" y2="675" />
   </g>
 
-  <!-- Mobile Phone Mockup 1 (Center Left - Timer Screen) -->
-  <g transform="translate(180, 50)">
-    <!-- Phone Body Outer Frame -->
-    <rect x="0" y="0" width="340" height="580" rx="38" fill="#0b0f19" stroke="#334155" stroke-width="4" filter="drop-shadow(0 25px 50px rgba(0,0,0,0.7))" />
+  <!-- ========================================== -->
+  <!-- MOBILE PHONE 1: MODO FOCO & CRONÔMETRO -->
+  <!-- ========================================== -->
+  <g transform="translate(180, 50)" filter="url(#phoneShadow)">
+    <!-- Phone Outer Body Frame -->
+    <rect x="0" y="0" width="340" height="580" rx="40" fill="#080d18" stroke="#334155" stroke-width="3.5" />
     <!-- Dynamic Island / Speaker notch -->
-    <rect x="120" y="14" width="100" height="18" rx="9" fill="#030712" />
-    <circle cx="205" cy="23" r="3.5" fill="#1e293b" />
+    <rect x="115" y="14" width="110" height="20" rx="10" fill="#020617" />
+    <circle cx="210" cy="24" r="3.5" fill="#1e293b" />
 
     <!-- Screen Content Area -->
-    <rect x="12" y="42" width="316" height="524" rx="28" fill="#0f172a" />
+    <rect x="12" y="42" width="316" height="524" rx="30" fill="#0b1120" />
 
     <!-- App Header inside Phone -->
-    <text x="32" y="76" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" letter-spacing="1">AL STUDIO FOCO</text>
-    <text x="32" y="98" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="18" font-weight="800">Modo Foco ⏱️</text>
-    <rect x="256" y="70" width="60" height="24" rx="12" fill="#1e293b" />
-    <text x="286" y="86" fill="#38bdf8" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" text-anchor="middle">25 min</text>
+    <text x="32" y="74" fill="#818cf8" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800" letter-spacing="1">AL STUDIO FOCO • ESTUDANTES</text>
+    <text x="32" y="96" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="900">Modo Foco ⏱️</text>
+    
+    <!-- Time Mode Pill (Top Right) -->
+    <rect x="246" y="68" width="70" height="24" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="281" y="84" fill="#38bdf8" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="800" text-anchor="middle">25 min</text>
 
-    <!-- Subject Pill -->
-    <rect x="32" y="118" width="130" height="26" rx="13" fill="#6366f1" fill-opacity="0.2" stroke="#6366f1" stroke-width="1" />
-    <text x="97" y="135" fill="#a5b4fc" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" text-anchor="middle">📐 Matemática</text>
+    <!-- Active Subject Badge -->
+    <rect x="32" y="114" width="145" height="26" rx="13" fill="#6366f1" fill-opacity="0.22" stroke="#6366f1" stroke-width="1" />
+    <text x="104" y="131" fill="#c7d2fe" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" text-anchor="middle">📐 Matemática - Álgebra</text>
 
-    <!-- Big Timer Circle -->
-    <circle cx="170" cy="260" r="95" fill="none" stroke="#1e293b" stroke-width="12" />
-    <circle cx="170" cy="260" r="95" fill="none" stroke="url(#accentGrad)" stroke-width="12" stroke-dasharray="596" stroke-dashoffset="150" stroke-linecap="round" transform="rotate(-90 170 260)" />
+    <!-- Big Circular Focus Timer Visual -->
+    <circle cx="170" cy="248" r="92" fill="none" stroke="#1e293b" stroke-width="12" />
+    <circle cx="170" cy="248" r="92" fill="none" stroke="url(#focoTimerGrad)" stroke-width="12" stroke-dasharray="578" stroke-dashoffset="145" stroke-linecap="round" transform="rotate(-90 170 248)" />
 
-    <!-- Timer Digits -->
-    <text x="170" y="255" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="44" font-weight="900" text-anchor="middle" letter-spacing="-1">24:18</text>
-    <text x="170" y="285" fill="#38bdf8" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.5">FOCO ATIVO</text>
+    <!-- Timer Digits & Status -->
+    <text x="170" y="244" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="44" font-weight="900" text-anchor="middle" letter-spacing="-1.5">24:18</text>
+    <text x="170" y="272" fill="#38bdf8" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="800" text-anchor="middle" letter-spacing="1.5">SESSÃO ATIVA ⚡</text>
 
-    <!-- Timer Control Buttons -->
-    <rect x="52" y="380" width="110" height="42" rx="21" fill="#6366f1" />
-    <text x="107" y="406" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800" text-anchor="middle">⏸️ Pausar</text>
+    <!-- Quick Preset Buttons (15m, 25m, 45m, 60m) -->
+    <g transform="translate(32, 350)">
+      <rect x="0" y="0" width="58" height="26" rx="13" fill="#1e293b" />
+      <text x="29" y="17" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle">15 min</text>
 
-    <rect x="178" y="380" width="110" height="42" rx="21" fill="#10b981" />
-    <text x="233" y="406" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800" text-anchor="middle">✓ Concluir</text>
+      <rect x="66" y="0" width="62" height="26" rx="13" fill="#6366f1" />
+      <text x="97" y="17" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="800" text-anchor="middle">25 min</text>
 
-    <!-- Streak Mini Banner -->
-    <rect x="32" y="442" width="276" height="52" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1" />
-    <text x="50" y="472" font-size="20">🔥</text>
-    <text x="80" y="465" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Sequência: 5 dias</text>
-    <text x="80" y="482" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Você está mantendo o ritmo diário!</text>
+      <rect x="136" y="0" width="58" height="26" rx="13" fill="#1e293b" />
+      <text x="165" y="17" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle">45 min</text>
 
-    <!-- Phone Bottom Nav Bar -->
-    <rect x="24" y="508" width="292" height="46" rx="23" fill="#090d16" stroke="#1e293b" stroke-width="1" />
-    <text x="60" y="536" font-size="16" text-anchor="middle">🏠</text>
-    <text x="115" y="536" font-size="16" text-anchor="middle">✅</text>
+      <rect x="202" y="0" width="74" height="26" rx="13" fill="#1e293b" />
+      <text x="239" y="17" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle">60 min</text>
+    </g>
+
+    <!-- Main Action Buttons (Pausar / Concluir) -->
+    <g transform="translate(32, 390)">
+      <rect x="0" y="0" width="130" height="42" rx="21" fill="#1e293b" stroke="#475569" stroke-width="1" />
+      <text x="65" y="26" fill="#f8fafc" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800" text-anchor="middle">⏸️ Pausar</text>
+
+      <rect x="146" y="0" width="130" height="42" rx="21" fill="url(#focoEmeraldGrad)" />
+      <text x="211" y="26" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="900" text-anchor="middle">✓ Concluir (+50 XP)</text>
+    </g>
+
+    <!-- Streak & Consistency Banner -->
+    <rect x="28" y="446" width="284" height="50" rx="16" fill="url(#focoCardGrad)" stroke="#334155" stroke-width="1" />
+    <text x="46" y="476" font-size="20">🔥</text>
+    <text x="76" y="468" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Sequência: 7 dias seguidos!</text>
+    <text x="76" y="485" fill="#38bdf8" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="600">Meta diária quase completa (85%)</text>
+
+    <!-- Phone Bottom Navigation Bar -->
+    <rect x="24" y="508" width="292" height="46" rx="23" fill="#070c18" stroke="#1e293b" stroke-width="1" />
+    <text x="58" y="536" font-size="15" text-anchor="middle">🏠</text>
+    <text x="114" y="536" font-size="15" text-anchor="middle">✅</text>
     <circle cx="170" cy="531" r="16" fill="#6366f1" />
-    <text x="170" y="537" font-size="16" text-anchor="middle">⏱️</text>
-    <text x="225" y="536" font-size="16" text-anchor="middle">📅</text>
-    <text x="280" y="536" font-size="16" text-anchor="middle">📊</text>
+    <text x="170" y="537" font-size="15" text-anchor="middle">⏱️</text>
+    <text x="226" y="536" font-size="15" text-anchor="middle">📅</text>
+    <text x="282" y="536" font-size="15" text-anchor="middle">📊</text>
   </g>
 
-  <!-- Mobile Phone Mockup 2 (Center Right - Dashboard "Meu Dia") -->
-  <g transform="translate(560, 50)">
-    <!-- Phone Body Outer Frame -->
-    <rect x="0" y="0" width="340" height="580" rx="38" fill="#0b0f19" stroke="#334155" stroke-width="4" filter="drop-shadow(0 25px 50px rgba(0,0,0,0.7))" />
+  <!-- ========================================== -->
+  <!-- MOBILE PHONE 2: DASHBOARD & MEU DIA -->
+  <!-- ========================================== -->
+  <g transform="translate(560, 50)" filter="url(#phoneShadow)">
+    <!-- Phone Outer Body Frame -->
+    <rect x="0" y="0" width="340" height="580" rx="40" fill="#080d18" stroke="#334155" stroke-width="3.5" />
     <!-- Dynamic Island / Speaker notch -->
-    <rect x="120" y="14" width="100" height="18" rx="9" fill="#030712" />
-    <circle cx="205" cy="23" r="3.5" fill="#1e293b" />
+    <rect x="115" y="14" width="110" height="20" rx="10" fill="#020617" />
+    <circle cx="210" cy="24" r="3.5" fill="#1e293b" />
 
     <!-- Screen Content Area -->
-    <rect x="12" y="42" width="316" height="524" rx="28" fill="#0f172a" />
+    <rect x="12" y="42" width="316" height="524" rx="30" fill="#0b1120" />
 
     <!-- App Header & Greeting -->
-    <text x="32" y="74" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="700">QUINTA-FEIRA, 27 DE AGOSTO</text>
+    <text x="32" y="74" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="700" letter-spacing="0.5">QUINTA-FEIRA • AL STUDIO FOCO</text>
     <text x="32" y="96" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="18" font-weight="900">Meu Dia 🚀</text>
-    <!-- Avatar -->
+    <!-- User Level & Avatar -->
     <circle cx="295" cy="85" r="16" fill="#6366f1" />
-    <text x="295" y="91" font-size="15" text-anchor="middle">⚡</text>
+    <text x="295" y="91" font-size="14" text-anchor="middle">⚡</text>
 
-    <!-- Daily Progress Card -->
-    <rect x="28" y="112" width="284" height="96" rx="18" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" />
-    <text x="44" y="136" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">META DE HOJE</text>
-    <text x="44" y="162" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="900">42 / 60 min</text>
-    <text x="280" y="162" fill="#38bdf8" font-family="Plus Jakarta Sans, sans-serif" font-size="18" font-weight="800" text-anchor="end">70%</text>
+    <!-- Daily Study Goal Card -->
+    <rect x="28" y="112" width="284" height="96" rx="18" fill="url(#focoCardGrad)" stroke="#334155" stroke-width="1" />
+    <text x="44" y="136" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="700">META DE ESTUDO DE HOJE</text>
+    <text x="44" y="162" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="900">45 / 60 min</text>
+    <text x="280" y="162" fill="#38bdf8" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="800" text-anchor="end">75%</text>
 
     <!-- Progress bar -->
-    <rect x="44" y="174" width="252" height="8" rx="4" fill="#090d16" />
-    <rect x="44" y="174" width="176" height="8" rx="4" fill="url(#accentGrad)" />
-    <text x="44" y="196" fill="#34d399" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5" font-weight="600">Você está indo bem! Continue assim.</text>
+    <rect x="44" y="174" width="252" height="8" rx="4" fill="#070c18" />
+    <rect x="44" y="174" width="189" height="8" rx="4" fill="url(#focoPrimaryGrad)" />
+    <text x="44" y="196" fill="#34d399" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5" font-weight="700">🎯 Falta apenas 1 sessão de 15 min!</text>
 
-    <!-- Big CTA Button -->
-    <rect x="28" y="218" width="284" height="44" rx="16" fill="url(#accentGrad)" />
-    <text x="170" y="246" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="800" text-anchor="middle">🎯 Começar foco</text>
+    <!-- Quick Start Focus CTA Button -->
+    <rect x="28" y="218" width="284" height="44" rx="16" fill="url(#focoPrimaryGrad)" />
+    <text x="170" y="245" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="900" text-anchor="middle">⚡ Iniciar Foco com Cronômetro</text>
 
-    <!-- Today's Tasks Summary -->
-    <text x="32" y="286" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800">Tarefas de Hoje</text>
-    <text x="296" y="286" fill="#38bdf8" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" text-anchor="end">3 pendentes</text>
+    <!-- Today's Study Tasks Section -->
+    <text x="32" y="286" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="800">Tarefas de Hoje</text>
+    <text x="296" y="286" fill="#38bdf8" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="700" text-anchor="end">2/3 Concluídas</text>
 
-    <!-- Task Item 1 -->
-    <rect x="28" y="298" width="284" height="42" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1" />
-    <circle cx="48" cy="319" r="8" fill="none" stroke="#64748b" stroke-width="2" />
-    <text x="66" y="323" fill="#f1f5f9" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Revisar fórmulas de Física</text>
-    <rect x="238" y="308" width="62" height="20" rx="10" fill="#3b82f6" fill-opacity="0.2" />
-    <text x="269" y="322" fill="#60a5fa" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="700" text-anchor="middle">Ciências</text>
+    <!-- Task Item 1 (Done) -->
+    <rect x="28" y="298" width="284" height="40" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="1" />
+    <circle cx="48" cy="318" r="8" fill="#10b981" />
+    <text x="48" y="322" fill="#042f1a" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="900" text-anchor="middle">✓</text>
+    <text x="66" y="322" fill="#e2e8f0" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="700">Resumo de Biologia: Genética</text>
+    <rect x="236" y="308" width="64" height="20" rx="10" fill="#10b981" fill-opacity="0.2" />
+    <text x="268" y="322" fill="#34d399" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="700" text-anchor="middle">Biologia</text>
 
-    <!-- Task Item 2 -->
-    <rect x="28" y="348" width="284" height="42" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1" />
-    <circle cx="48" cy="369" r="8" fill="none" stroke="#64748b" stroke-width="2" />
-    <text x="66" y="373" fill="#f1f5f9" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700">Resumo de História cap. 4</text>
-    <rect x="238" y="358" width="62" height="20" rx="10" fill="#eab308" fill-opacity="0.2" />
-    <text x="269" y="372" fill="#facc15" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="700" text-anchor="middle">História</text>
+    <!-- Task Item 2 (Pending) -->
+    <rect x="28" y="346" width="284" height="40" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <circle cx="48" cy="366" r="8" fill="none" stroke="#64748b" stroke-width="2" />
+    <text x="66" y="370" fill="#f8fafc" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5" font-weight="700">Lista de Exercícios: Trigonometria</text>
+    <rect x="236" y="356" width="64" height="20" rx="10" fill="#6366f1" fill-opacity="0.2" />
+    <text x="268" y="370" fill="#a5b4fc" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="700" text-anchor="middle">Matemática</text>
 
-    <!-- Next Event / Exam Banner -->
-    <rect x="28" y="400" width="284" height="52" rx="14" fill="#dc2626" fill-opacity="0.15" stroke="#ef4444" stroke-width="1" />
-    <text x="44" y="424" font-size="16">📝</text>
-    <text x="68" y="420" fill="#fca5a5" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="800">PROVA AMANHÃ</text>
-    <text x="68" y="438" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Prova de Matemática - 08:00</text>
+    <!-- Exam / Deadline Alert Card -->
+    <rect x="28" y="394" width="284" height="52" rx="14" fill="#dc2626" fill-opacity="0.14" stroke="#ef4444" stroke-width="1.2" />
+    <text x="44" y="420" font-size="17">📅</text>
+    <text x="70" y="416" fill="#fca5a5" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5" font-weight="800">PROVA AMANHÃ • IMPORTANTE</text>
+    <text x="70" y="434" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Prova de Física II (Leis de Newton) • 08h</text>
 
-    <!-- Mini Weekly Bar Chart -->
-    <rect x="28" y="460" width="284" height="42" rx="12" fill="#1e293b" />
-    <text x="40" y="485" font-size="10" fill="#94a3b8" font-family="monospace">SEG ███  TER █████  QUA ██  QUI ████</text>
+    <!-- Weekly Study Stats Bar Line -->
+    <rect x="28" y="456" width="284" height="42" rx="12" fill="#1e293b" />
+    <text x="40" y="481" font-size="10" fill="#38bdf8" font-family="monospace">SEG 45m  TER 60m  QUA 50m  QUI 45m 🟢</text>
 
-    <!-- Phone Bottom Nav Bar -->
-    <rect x="24" y="508" width="292" height="46" rx="23" fill="#090d16" stroke="#1e293b" stroke-width="1" />
-    <circle cx="60" cy="531" r="16" fill="#6366f1" />
-    <text x="60" y="537" font-size="16" text-anchor="middle">🏠</text>
-    <text x="115" y="536" font-size="16" text-anchor="middle">✅</text>
-    <text x="170" y="536" font-size="16" text-anchor="middle">⏱️</text>
-    <text x="225" y="536" font-size="16" text-anchor="middle">📅</text>
-    <text x="280" y="536" font-size="16" text-anchor="middle">📊</text>
+    <!-- Phone Bottom Navigation Bar -->
+    <rect x="24" y="508" width="292" height="46" rx="23" fill="#070c18" stroke="#1e293b" stroke-width="1" />
+    <circle cx="58" cy="531" r="16" fill="#6366f1" />
+    <text x="58" y="537" font-size="15" text-anchor="middle">🏠</text>
+    <text x="114" y="536" font-size="15" text-anchor="middle">✅</text>
+    <text x="170" y="536" font-size="15" text-anchor="middle">⏱️</text>
+    <text x="226" y="536" font-size="15" text-anchor="middle">📅</text>
+    <text x="282" y="536" font-size="15" text-anchor="middle">📊</text>
   </g>
 
-  <!-- Right Floating Features Badge Box -->
-  <g transform="translate(930, 90)">
-    <!-- Badge 1: AL Studio Jovem -->
-    <rect x="0" y="0" width="230" height="48" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
-    <text x="16" y="30" font-size="18">⚡</text>
-    <text x="44" y="24" fill="#a5b4fc" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="800" letter-spacing="1">LINHA EXCLUSIVA</text>
-    <text x="44" y="39" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="900">AL Studio Jovem</text>
+  <!-- ========================================== -->
+  <!-- RIGHT FLOATING FEATURES & CATEGORY BADGES  -->
+  <!-- ========================================== -->
+  <g transform="translate(930, 85)">
+    <!-- Badge 1: AL Studio Estudantes Header -->
+    <rect x="0" y="0" width="230" height="50" rx="14" fill="#1e293b" stroke="#6366f1" stroke-width="1.5" />
+    <text x="16" y="32" font-size="19">🎓</text>
+    <text x="46" y="24" fill="#a5b4fc" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="800" letter-spacing="1">AL STUDIO ESTUDANTES</text>
+    <text x="46" y="40" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="900">AL Studio Foco</text>
 
-    <!-- Badge 2: 100% Offline -->
-    <rect x="0" y="64" width="230" height="74" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
-    <text x="16" y="98" font-size="20">💾</text>
-    <text x="48" y="92" fill="#38bdf8" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">IndexedDB Seguro</text>
-    <text x="48" y="110" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">100% no seu dispositivo</text>
-    <text x="48" y="125" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Sem login &amp; Sem internet</text>
+    <!-- Badge 2: 100% Offline & Seguro -->
+    <rect x="0" y="66" width="230" height="74" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <text x="16" y="100" font-size="21">🔒</text>
+    <text x="48" y="94" fill="#38bdf8" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">IndexedDB Seguro</text>
+    <text x="48" y="112" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">100% no seu celular ou PC</text>
+    <text x="48" y="127" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Sem login &amp; Sem internet</text>
 
-    <!-- Badge 3: Pomodoro & Metas -->
-    <rect x="0" y="154" width="230" height="74" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
-    <text x="16" y="188" font-size="20">🎯</text>
-    <text x="48" y="182" fill="#34d399" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Temporizador &amp; Metas</text>
-    <text x="48" y="200" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">15, 25, 30, 45, 60 min</text>
-    <text x="48" y="215" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Controle diário e semanal</text>
+    <!-- Badge 3: Pomodoro & Metas de Estudo -->
+    <rect x="0" y="156" width="230" height="74" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <text x="16" y="190" font-size="21">⏱️</text>
+    <text x="48" y="184" fill="#818cf8" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Pomodoro Inteligente</text>
+    <text x="48" y="202" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">15, 25, 45 e 60 minutos</text>
+    <text x="48" y="217" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Alerta sonoro de conclusão</text>
 
-    <!-- Badge 4: Calendário de Provas -->
-    <rect x="0" y="244" width="230" height="74" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
-    <text x="16" y="278" font-size="20">📅</text>
-    <text x="48" y="272" fill="#f59e0b" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Provas &amp; Trabalhos</text>
-    <text x="48" y="290" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Planejamento visual</text>
-    <text x="48" y="305" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Alertas de prazos</text>
+    <!-- Badge 4: Calendário de Provas & Entregas -->
+    <rect x="0" y="246" width="230" height="74" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <text x="16" y="280" font-size="21">📅</text>
+    <text x="48" y="274" fill="#f59e0b" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Provas &amp; Trabalhos</text>
+    <text x="48" y="292" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Planejamento bimestral</text>
+    <text x="48" y="307" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Contagem regressiva de dias</text>
 
-    <!-- Badge 5: Mobile First & PWA -->
-    <rect x="0" y="334" width="230" height="74" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
-    <text x="16" y="368" font-size="20">📱</text>
-    <text x="48" y="362" fill="#a855f7" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Mobile First &amp; PWA</text>
-    <text x="48" y="380" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Instale no celular</text>
-    <text x="48" y="395" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Visual moderno &amp; ágil</text>
+    <!-- Badge 5: Tarefas por Matéria & Streaks -->
+    <rect x="0" y="336" width="230" height="74" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <text x="16" y="370" font-size="21">🏆</text>
+    <text x="48" y="364" fill="#10b981" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Gamificação &amp; Streaks</text>
+    <text x="48" y="382" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Suba de nível e ganhe XP</text>
+    <text x="48" y="397" fill="#94a3b8" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Sequências de consistência</text>
   </g>
 </svg>

@@ -58,12 +58,12 @@ export const categories: CategoryInfo[] = [
     icon: "Zap",
   },
   {
-    id: "jovem",
-    name: "Jovem",
-    label: "AL Studio Jovem",
-    title: "AL STUDIO JOVEM",
-    description: "Aplicativos modernos para estudos, rotina e produtividade de jovens e estudantes.",
-    icon: "Sparkles",
+    id: "estudantes",
+    name: "Estudantes",
+    label: "AL Studio Estudantes",
+    title: "AL STUDIO ESTUDANTES",
+    description: "Aplicativos modernos para organização de estudos, rotinas acadêmicas e foco com Pomodoro.",
+    icon: "GraduationCap",
   },
   {
     id: "fitness",
@@ -539,8 +539,8 @@ export const products: Product[] = [
     id: "al-studio-foco",
     slug: "al-studio-foco",
     name: "AL Studio Foco",
-    category: "Jovem",
-    categoriesList: ["Jovem", "AL Studio Jovem", "app", "Produtividade"],
+    category: "Estudantes",
+    categoriesList: ["Estudantes", "AL Studio Estudantes", "app", "Produtividade", "Jovem"],
     shortDescription:
       "Aplicativo mobile-first para estudantes e jovens organizarem estudos, matérias, provas e sessões de foco com Pomodoro.",
     description:
@@ -556,6 +556,10 @@ export const products: Product[] = [
     featured: true,
     active: true,
     createdAt: "2026-08-27T00:00:00Z",
+    headline: "Domine sua rotina de estudos com foco e organização.",
+    headlineHighlight: "Organize matérias, tarefas, provas e sessões de estudo com cronômetro de foco 100% offline.",
+    ctaText: "COMEÇAR AGORA",
+    accessButtonText: "🚀 ACESSAR AL STUDIO FOCO",
     features: [
       {
         title: "☀️ Dashboard 'Meu Dia'",
